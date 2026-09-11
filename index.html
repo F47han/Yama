@@ -183,7 +183,7 @@
   }
  
   .container {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 40px;
   }
@@ -323,10 +323,10 @@
     box-shadow: 0 4px 14px rgba(122,17,48,0.22);
   }
  
-  /* ===== VIDEO SHOWCASE SECTION ===== */
+  /* ===== VIDEO SHOWCASE SECTION (ENLARGED & PROMINENT) ===== */
   .video-section {
-    background: linear-gradient(180deg, #faf7f8 0%, #f4eff1 100%);
-    padding: 60px 0;
+    background: linear-gradient(180deg, #faf7f8 0%, #f3ecef 100%);
+    padding: 70px 0 80px;
     border-top: 1px solid #ebe4e7;
     border-bottom: 1px solid #ebe4e7;
   }
@@ -337,19 +337,24 @@
     flex-wrap: wrap;
   }
   .video-player-wrap {
-    flex: 1.1;
-    min-width: 320px;
-    border-radius: 12px;
+    flex: 1.5;
+    min-width: 380px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 50px rgba(122,17,48,0.22);
     background: #000;
-    border: 3px solid #fff;
+    border: 4px solid #ffffff;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .video-player-wrap:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 60px rgba(122,17,48,0.28);
   }
   .video-player-wrap video {
     width: 100%;
     height: auto;
-    max-height: 480px;
+    max-height: 580px;
     display: block;
     object-fit: cover;
   }
@@ -368,32 +373,32 @@
   }
   .video-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 32px;
     color: var(--maroon);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     line-height: 1.3;
   }
   .video-content p {
     color: var(--grey-text);
-    font-size: 15px;
+    font-size: 15.5px;
     line-height: 1.8;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
   .video-highlights {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
   .v-highlight-item {
     background: #fff;
-    padding: 12px 14px;
+    padding: 13px 16px;
     border-radius: 6px;
     border-left: 3px solid var(--maroon);
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 500;
     color: #333;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   }
 
   /* ===== SECTION HEADINGS ===== */
@@ -998,11 +1003,12 @@
   footer.site-footer a { color: #f2c7d4; }
   footer.site-footer a:hover { text-decoration: underline; }
  
-  @media (max-width: 960px) {
+  @media (max-width: 990px) {
     .hero { flex-direction: column-reverse; gap: 30px; }
     .hero-media { width: 100%; }
     .range-stage-col { flex: 1 1 100%; max-width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); }
     .video-layout { flex-direction: column; }
+    .video-player-wrap { width: 100%; min-width: 100%; }
     .specs-table { display: block; overflow-x: auto; }
   }
   @media (max-width: 768px) {
@@ -1037,7 +1043,7 @@
 <header class="site-header">
   <div class="logo">
     <a href="https://treasuresfromgreece.co.uk/" style="display:flex; align-items:center; gap:14px;">
-      <img src="images/TFGLogo.png" alt="Treasures from Greece Logo" class="tfg-logo-img">
+      <img src="Yamas/TFGLogo.png" alt="Treasures from Greece Logo" class="tfg-logo-img" onerror="imgFallback(this)">
       <div class="logo-text">
         <div style="font-size:22px; font-weight:700; letter-spacing:0.5px;">TFG</div>
         <div style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase;">Treasures from Greece</div>
@@ -1048,7 +1054,7 @@
     <ul>
       <li><a href="https://treasuresfromgreece.co.uk/">HOME</a></li>
       <li><a href="https://treasuresfromgreece.co.uk/our-partners/">OUR PARTNERS</a></li>
-      <li><a href="yamas-iced-tea.html" class="active">YAMAS ICED TEA</a></li>
+      <li><a href="index.html" class="active">YAMAS ICED TEA</a></li>
       <li><a href="https://treasuresfromgreece.co.uk/contact-us/">CONTACT US</a></li>
     </ul>
   </nav>
@@ -1064,7 +1070,7 @@
     <div class="sub">NOW AVAILABLE IN THE UK</div>
   </div>
   <div class="brand-badge">
-    <img src="images/YAMAS LOGO.png" alt="Yamas Logo">
+    <img src="Yamas/YAMAS LOGO.png" alt="Yamas Logo" onerror="imgFallback(this)">
     <div class="badge-text">
       <span class="brand-name">YAMAS</span>
       <span class="brand-sub">Authentic Hellenic Iced Tea</span>
@@ -1082,19 +1088,19 @@
       <div class="bottle-strip">
         <div class="strip-card" onclick="document.getElementById('can-range-card').scrollIntoView({behavior: 'smooth'})">
           <div class="img-box">
-            <img src="images/Yamas cans new p.jpeg" alt="Yamas 330ml Can Range">
+            <img src="Yamas/Yamas cans new p.jpeg" alt="Yamas 330ml Can Range" onerror="imgFallback(this)">
           </div>
           <div class="label">330ml Cans &darr;</div>
         </div>
         <div class="strip-card" onclick="document.getElementById('bottle-range-card').scrollIntoView({behavior: 'smooth'})">
           <div class="img-box">
-            <img src="images/Glass bottles .jpeg" alt="Yamas 360ml Glass Bottles">
+            <img src="Yamas/Glass bottles .jpeg" alt="Yamas 360ml Glass Bottles" onerror="imgFallback(this)">
           </div>
           <div class="label">360ml Glass Bottles &darr;</div>
         </div>
         <div class="strip-card" onclick="document.getElementById('video-tour').scrollIntoView({behavior: 'smooth'})">
           <div class="img-box">
-            <img src="images/New Flavours.png" alt="Yamas New Flavours Lifestyle">
+            <img src="Yamas/New Flavours.png" alt="Yamas New Flavours Lifestyle" onerror="imgFallback(this)">
           </div>
           <div class="label">Watch Video &darr;</div>
         </div>
@@ -1115,12 +1121,14 @@
   </div>
 </div>
 
-<!-- ===== VIDEO SHOWCASE SECTION ===== -->
+<!-- ===== VIDEO SHOWCASE SECTION (ENLARGED & PROMINENT) ===== -->
 <section class="video-section" id="video-tour">
   <div class="container">
     <div class="video-layout">
       <div class="video-player-wrap">
-        <video controls autoplay muted loop playsinline poster="images/New Flavours.png">
+        <video controls autoplay muted loop playsinline poster="Yamas/New Flavours.png">
+          <source src="Yamas/yamas-video-cans.mp4" type="video/mp4">
+          <source src="Yamas/Yamas video cans .mp4" type="video/mp4">
           <source src="images/yamas-video-cans.mp4" type="video/mp4">
           <source src="images/Yamas video cans .mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -1197,7 +1205,7 @@
   
   <div class="range-grid">
     
-    <!-- 330ML CAN RANGE CARD (SPLIT LAYOUT) -->
+    <!-- 330ML CAN RANGE CARD (SPLIT LAYOUT - NEVER COVERS TEXT) -->
     <div class="range-card" id="can-range-card">
       <div class="range-card-header">
         <h3>YAMAS 330ML CAN RANGE</h3>
@@ -1205,7 +1213,7 @@
       </div>
 
       <div class="range-card-inner-split">
-        <!-- Floating Drink Stage (Dedicated stage: image never covers text) -->
+        <!-- Floating Drink Stage -->
         <div class="range-stage-col">
           <div class="range-stage-top-controls">
             <div class="stage-badge" id="can-badge">
@@ -1216,7 +1224,7 @@
           </div>
           
           <div class="range-floating-img-stage">
-            <img id="can-main-img" class="main-display-img" src="images/Yamas cans new p.jpeg" alt="YAMAS 330ml Can Range">
+            <img id="can-main-img" class="main-display-img" src="Yamas/Yamas cans new p.jpeg" alt="YAMAS 330ml Can Range" onerror="imgFallback(this)">
           </div>
 
           <div class="stage-footer-note">
@@ -1239,45 +1247,45 @@
             <span class="tip">Interactive Photo Selector</span>
           </div>
 
-          <!-- Interactive Flavour Pills with isolated thumbnail stage -->
+          <!-- Interactive Flavour Pills -->
           <div class="flavour-gallery" id="can-gallery">
-            <div class="flavour-pill" data-range="can" data-id="can-lemon" data-img="images/yamas can lemon.png" data-name="Lemon & Honey (330ml Can)">
-              <div class="thumb-stage"><img src="images/yamas can lemon.png" alt="Lemon and Honey Can"></div>
+            <div class="flavour-pill" data-range="can" data-id="can-lemon" data-img="Yamas/yamas can lemon.png" data-name="Lemon & Honey (330ml Can)">
+              <div class="thumb-stage"><img src="Yamas/yamas can lemon.png" alt="Lemon and Honey Can" onerror="imgFallback(this)"></div>
               <div class="p-name">Lemon &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="can" data-id="can-peach" data-img="images/yamas can peach.png" data-name="Peach & Honey (330ml Can)">
-              <div class="thumb-stage"><img src="images/yamas can peach.png" alt="Peach and Honey Can"></div>
+            <div class="flavour-pill" data-range="can" data-id="can-peach" data-img="Yamas/yamas can peach.png" data-name="Peach & Honey (330ml Can)">
+              <div class="thumb-stage"><img src="Yamas/yamas can peach.png" alt="Peach and Honey Can" onerror="imgFallback(this)"></div>
               <div class="p-name">Peach &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="can" data-id="can-pom" data-img="images/yamas can pomegranate.png" data-name="Pomegranate & Honey (330ml Can)">
-              <div class="thumb-stage"><img src="images/yamas can pomegranate.png" alt="Pomegranate and Honey Can"></div>
+            <div class="flavour-pill" data-range="can" data-id="can-pom" data-img="Yamas/yamas can pomegranate.png" data-name="Pomegranate & Honey (330ml Can)">
+              <div class="thumb-stage"><img src="Yamas/yamas can pomegranate.png" alt="Pomegranate and Honey Can" onerror="imgFallback(this)"></div>
               <div class="p-name">Pomegranate &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="can" data-id="can-grapefruit" data-img="images/Grapefruit can.png" data-name="Pink Grapefruit (330ml Can)">
-              <div class="thumb-stage"><img src="images/Grapefruit can.png" alt="Pink Grapefruit Can"></div>
+            <div class="flavour-pill" data-range="can" data-id="can-grapefruit" data-img="Yamas/Grapefruit can.png" data-name="Pink Grapefruit (330ml Can)">
+              <div class="thumb-stage"><img src="Yamas/Grapefruit can.png" alt="Pink Grapefruit Can" onerror="imgFallback(this)"></div>
               <div class="p-name">Pink Grapefruit</div>
             </div>
-            <div class="flavour-pill" data-range="can" data-id="can-matcha" data-img="images/Matcha can.png" data-name="Matcha & Yuzu (330ml Can)">
-              <div class="thumb-stage"><img src="images/Matcha can.png" alt="Matcha and Yuzu Can"></div>
+            <div class="flavour-pill" data-range="can" data-id="can-matcha" data-img="Yamas/Matcha can.png" data-name="Matcha & Yuzu (330ml Can)">
+              <div class="thumb-stage"><img src="Yamas/Matcha can.png" alt="Matcha and Yuzu Can" onerror="imgFallback(this)"></div>
               <div class="p-name">Matcha &amp; Yuzu</div>
             </div>
           </div>
 
           <span class="flavour-list-title">Flavours:</span>
           <ul class="flavour-list" id="can-list">
-            <li data-range="can" data-id="can-lemon" data-img="images/yamas can lemon.png" data-name="Lemon & Honey (330ml Can)">
+            <li data-range="can" data-id="can-lemon" data-img="Yamas/yamas can lemon.png" data-name="Lemon & Honey (330ml Can)">
               <strong>Green Tea with Lemon and Honey</strong>
             </li>
-            <li data-range="can" data-id="can-peach" data-img="images/yamas can peach.png" data-name="Peach & Honey (330ml Can)">
+            <li data-range="can" data-id="can-peach" data-img="Yamas/yamas can peach.png" data-name="Peach & Honey (330ml Can)">
               <strong>Black Tea with Peach and Honey</strong>
             </li>
-            <li data-range="can" data-id="can-pom" data-img="images/yamas can pomegranate.png" data-name="Pomegranate & Honey (330ml Can)">
+            <li data-range="can" data-id="can-pom" data-img="Yamas/yamas can pomegranate.png" data-name="Pomegranate & Honey (330ml Can)">
               <strong>White Tea with Pomegranate and Honey</strong>
             </li>
-            <li data-range="can" data-id="can-grapefruit" data-img="images/Grapefruit can.png" data-name="Pink Grapefruit (330ml Can)">
+            <li data-range="can" data-id="can-grapefruit" data-img="Yamas/Grapefruit can.png" data-name="Pink Grapefruit (330ml Can)">
               <strong>White Tea with Pink Grapefruit</strong>
             </li>
-            <li data-range="can" data-id="can-matcha" data-img="images/Matcha can.png" data-name="Matcha & Yuzu (330ml Can)">
+            <li data-range="can" data-id="can-matcha" data-img="Yamas/Matcha can.png" data-name="Matcha & Yuzu (330ml Can)">
               <strong>Green Tea with Matcha and Yuzu</strong>
             </li>
           </ul>
@@ -1285,7 +1293,7 @@
       </div>
     </div>
 
-    <!-- 360ML GLASS BOTTLE RANGE CARD (SPLIT LAYOUT) -->
+    <!-- 360ML GLASS BOTTLE RANGE CARD (SPLIT LAYOUT - NEVER COVERS TEXT) -->
     <div class="range-card" id="bottle-range-card">
       <div class="range-card-header">
         <h3>YAMAS 360ML GLASS BOTTLE RANGE</h3>
@@ -1293,7 +1301,7 @@
       </div>
 
       <div class="range-card-inner-split">
-        <!-- Floating Drink Stage (Dedicated stage: image never covers text) -->
+        <!-- Floating Drink Stage -->
         <div class="range-stage-col">
           <div class="range-stage-top-controls">
             <div class="stage-badge" id="bottle-badge">
@@ -1304,7 +1312,7 @@
           </div>
           
           <div class="range-floating-img-stage">
-            <img id="bottle-main-img" class="main-display-img" src="images/Glass bottles .jpeg" alt="YAMAS 360ml Glass Bottle Range">
+            <img id="bottle-main-img" class="main-display-img" src="Yamas/Glass bottles .jpeg" alt="YAMAS 360ml Glass Bottle Range" onerror="imgFallback(this)">
           </div>
 
           <div class="stage-footer-note">
@@ -1327,59 +1335,59 @@
             <span class="tip">Interactive Photo Selector</span>
           </div>
 
-          <!-- Interactive Flavour Pills with isolated thumbnail stage -->
+          <!-- Interactive Flavour Pills -->
           <div class="flavour-gallery" id="bottle-gallery">
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-lemon" data-img="images/Green tea lemon & honey.png" data-name="Lemon & Honey (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/Green tea lemon & honey.png" alt="Lemon & Honey Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-lemon" data-img="Yamas/Green tea lemon & honey.png" data-name="Lemon & Honey (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/Green tea lemon & honey.png" alt="Lemon & Honey Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Lemon &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-peach" data-img="images/BLACK TEA WITH PEACH & HONEY.png" data-name="Peach & Honey (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/BLACK TEA WITH PEACH & HONEY.png" alt="Peach & Honey Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-peach" data-img="Yamas/BLACK TEA WITH PEACH & HONEY.png" data-name="Peach & Honey (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/BLACK TEA WITH PEACH & HONEY.png" alt="Peach & Honey Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Peach &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-pom" data-img="images/WHITE TEA WITH  POMEGRANATE & HONEY.png" data-name="Pomegranate & Honey (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/WHITE TEA WITH  POMEGRANATE & HONEY.png" alt="Pomegranate & Honey Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-pom" data-img="Yamas/WHITE TEA WITH  POMEGRANATE & HONEY.png" data-name="Pomegranate & Honey (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/WHITE TEA WITH  POMEGRANATE & HONEY.png" alt="Pomegranate & Honey Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Pomegranate &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-mango" data-img="images/GREEN TEA WITH MANGO & HONEY.png" data-name="Mango & Honey (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/GREEN TEA WITH MANGO & HONEY.png" alt="Mango & Honey Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-mango" data-img="Yamas/GREEN TEA WITH MANGO & HONEY.png" data-name="Mango & Honey (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/GREEN TEA WITH MANGO & HONEY.png" alt="Mango & Honey Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Mango &amp; Honey</div>
             </div>
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-blueberry" data-img="images/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/GREEN TEA WITH BLUEBERRIES.png" alt="Blueberry Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-blueberry" data-img="Yamas/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/GREEN TEA WITH BLUEBERRIES.png" alt="Blueberry Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Blueberry</div>
             </div>
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-grapefruit" data-img="images/White tea and grapefruit.jpeg" data-name="Pink Grapefruit (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/White tea and grapefruit.jpeg" alt="Pink Grapefruit Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-grapefruit" data-img="Yamas/White tea and grapefruit.jpeg" data-name="Pink Grapefruit (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/White tea and grapefruit.jpeg" alt="Pink Grapefruit Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Pink Grapefruit</div>
             </div>
-            <div class="flavour-pill" data-range="bottle" data-id="bottle-matcha" data-img="images/Matcha green tea W.jpeg.png" data-name="Matcha (360ml Bottle)">
-              <div class="thumb-stage"><img src="images/Matcha green tea W.jpeg.png" alt="Matcha Bottle"></div>
+            <div class="flavour-pill" data-range="bottle" data-id="bottle-matcha" data-img="Yamas/Matcha green tea W.jpeg.png" data-name="Matcha (360ml Bottle)">
+              <div class="thumb-stage"><img src="Yamas/Matcha green tea W.jpeg.png" alt="Matcha Bottle" onerror="imgFallback(this)"></div>
               <div class="p-name">Matcha</div>
             </div>
           </div>
 
           <span class="flavour-list-title">Flavours:</span>
           <ul class="flavour-list" id="bottle-list">
-            <li data-range="bottle" data-id="bottle-lemon" data-img="images/Green tea lemon & honey.png" data-name="Lemon & Honey (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-lemon" data-img="Yamas/Green tea lemon & honey.png" data-name="Lemon & Honey (360ml Bottle)">
               <strong>Green Tea with Lemon and Honey</strong>
             </li>
-            <li data-range="bottle" data-id="bottle-peach" data-img="images/BLACK TEA WITH PEACH & HONEY.png" data-name="Peach & Honey (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-peach" data-img="Yamas/BLACK TEA WITH PEACH & HONEY.png" data-name="Peach & Honey (360ml Bottle)">
               <strong>Black Tea with Peach and Honey</strong>
             </li>
-            <li data-range="bottle" data-id="bottle-pom" data-img="images/WHITE TEA WITH  POMEGRANATE & HONEY.png" data-name="Pomegranate & Honey (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-pom" data-img="Yamas/WHITE TEA WITH  POMEGRANATE & HONEY.png" data-name="Pomegranate & Honey (360ml Bottle)">
               <strong>White Tea with Pomegranate and Honey</strong>
             </li>
-            <li data-range="bottle" data-id="bottle-mango" data-img="images/GREEN TEA WITH MANGO & HONEY.png" data-name="Mango & Honey (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-mango" data-img="Yamas/GREEN TEA WITH MANGO & HONEY.png" data-name="Mango & Honey (360ml Bottle)">
               <strong>Green Tea with Mango and Honey</strong>
             </li>
-            <li data-range="bottle" data-id="bottle-blueberry" data-img="images/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-blueberry" data-img="Yamas/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry (360ml Bottle)">
               <strong>Green Tea with Blueberry</strong>
             </li>
-            <li data-range="bottle" data-id="bottle-grapefruit" data-img="images/White tea and grapefruit.jpeg" data-name="Pink Grapefruit (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-grapefruit" data-img="Yamas/White tea and grapefruit.jpeg" data-name="Pink Grapefruit (360ml Bottle)">
               <strong>White Tea with Pink Grapefruit</strong>
             </li>
-            <li data-range="bottle" data-id="bottle-matcha" data-img="images/Matcha green tea W.jpeg.png" data-name="Matcha (360ml Bottle)">
+            <li data-range="bottle" data-id="bottle-matcha" data-img="Yamas/Matcha green tea W.jpeg.png" data-name="Matcha (360ml Bottle)">
               <strong>Green Tea with Matcha</strong>
             </li>
           </ul>
@@ -1535,16 +1543,27 @@
   <p>&copy; 2026 Treasures from Greece. All rights reserved. | Official UK Importer &amp; Distributor: T.F.G. Imports Ltd</p>
 </footer>
 
-<!-- ===== INTERACTIVE PHOTO SWITCHER SCRIPT ===== -->
+<!-- ===== INTERACTIVE SCRIPT ===== -->
 <script>
+  // Robust image fallback if path variations occur
+  function imgFallback(el) {
+    if (!el || el.dataset.fallbackTried) return;
+    el.dataset.fallbackTried = "true";
+    if (el.src.indexOf('Yamas/') !== -1) {
+      el.src = el.src.replace('Yamas/', 'images/');
+    } else if (el.src.indexOf('images/') !== -1) {
+      el.src = el.src.replace('images/', 'Yamas/');
+    }
+  }
+
   // Default range lineup images
   const defaultImages = {
     can: {
-      img: 'images/Yamas cans new p.jpeg',
+      img: 'Yamas/Yamas cans new p.jpeg',
       name: 'All 5 Cans'
     },
     bottle: {
-      img: 'images/Glass bottles .jpeg',
+      img: 'Yamas/Glass bottles .jpeg',
       name: 'All 7 Bottles'
     }
   };
