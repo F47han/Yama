@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--maroon:#7a1130;--maroon-d:#560a20;--maroon-l:#9e1f3e;--accent:#e8334a;--teal:#0d7377;--white:#ffffff;--off:#f9f9f9;--light:#f2f2f2;--txt:#111111;--grey:#555555;--bdr:#e0e0e0;--shadow:0 4px 20px rgba(0,0,0,0.08);}
+:root{--maroon:#c1121f;--maroon-d:#900e17;--maroon-l:#e63946;--accent:#e8334a;--teal:#0d7377;--white:#ffffff;--off:#f9f9f9;--light:#f2f2f2;--txt:#111111;--grey:#555555;--bdr:#e0e0e0;--shadow:0 4px 20px rgba(0,0,0,0.08);}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--txt);line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;transition:all .25s;}ul{list-style:none;}img{max-width:100%;height:auto;display:block;}
@@ -113,7 +113,7 @@ nav.main-nav a:hover{color:var(--maroon);border-bottom-color:var(--maroon);}
 .stage-reset-btn{background:#fff;border:2px solid var(--bdr);color:var(--grey);font-size:11px;font-weight:700;padding:5px 10px;border-radius:2px;cursor:pointer;transition:all .2s;letter-spacing:.5px;}
 .stage-reset-btn:hover{border-color:var(--maroon);color:var(--maroon);}
 .range-floating-img-stage{flex:1;width:100%;min-height:300px;display:flex;align-items:center;justify-content:center;padding:10px;}
-.range-floating-img-stage img.main-display-img{max-height:300px;max-width:100%;width:auto;object-fit:contain;transition:opacity .22s,transform .25s;filter:drop-shadow(0 12px 20px rgba(122,17,48,.18));}
+.range-floating-img-stage img.main-display-img{max-height:300px;max-width:100%;width:auto;object-fit:contain;transition:opacity .22s,transform .25s;filter:drop-shadow(0 12px 20px rgba(193,18,31,.18));}
 .range-floating-img-stage img.main-display-img.fade-out{opacity:.05;transform:scale(.92);}
 .stage-footer-note{font-size:11.5px;color:#999;text-align:center;margin-top:12px;font-style:italic;}
 .range-content-col{flex:1;min-width:300px;padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between;}
@@ -365,7 +365,7 @@ footer.site-footer a{color:rgba(255,255,255,.7);}footer.site-footer a:hover{colo
       <div class="range-card-inner-split">
         <div class="range-stage-col">
           <div class="range-stage-top-controls">
-            <div class="stage-badge" id="can-badge"><span class="dot"></span><span id="can-badge-text">Showing: All 5 Cans</span></div>
+            <div class="stage-badge" id="can-badge"><span class="dot"></span><span id="can-badge-text">Showing: All 7 Cans</span></div>
             <button class="stage-reset-btn" onclick="resetRangeView('can')">&#8634; View All</button>
           </div>
           <div class="range-floating-img-stage">
@@ -383,10 +383,15 @@ footer.site-footer a{color:rgba(255,255,255,.7);}footer.site-footer a:hover{colo
             <div class="flavour-pill" data-range="can" data-id="can-pom" data-img="Yamas/yamas can pomegranate.png" data-name="Pomegranate and Honey 330ml"><div class="thumb-stage"><img src="Yamas/yamas can pomegranate.png" alt="Pomegranate Can" onerror="imgFallback(this)"></div><div class="p-name">Pomegranate &amp; Honey</div></div>
             <div class="flavour-pill" data-range="can" data-id="can-grapefruit" data-img="Yamas/Grapefruit can.png" data-name="Pink Grapefruit 330ml"><div class="thumb-stage"><img src="Yamas/Grapefruit can.png" alt="Grapefruit Can" onerror="imgFallback(this)"></div><div class="p-name">Pink Grapefruit</div></div>
             <div class="flavour-pill" data-range="can" data-id="can-matcha" data-img="Yamas/Matcha can.png" data-name="Matcha and Yuzu 330ml"><div class="thumb-stage"><img src="Yamas/Matcha can.png" alt="Matcha Can" onerror="imgFallback(this)"></div><div class="p-name">Matcha &amp; Yuzu</div></div>
+          
+            <div class="flavour-pill" data-range="can" data-id="can-blueberry" data-img="Yamas/yamas can bluberry.png" data-name="Blueberry 330ml Can"><div class="thumb-stage"><img src="Yamas/yamas can bluberry.png" alt="Blueberry Can" onerror="imgFallback(this)"></div><div class="p-name">Blueberry</div></div>
+            <div class="flavour-pill" data-range="can" data-id="can-cannabis" data-img="Yamas/yamas can canabis .jpg" data-name="Cannabis 330ml Can"><div class="thumb-stage"><img src="Yamas/yamas can canabis .jpg" alt="Cannabis Can" onerror="imgFallback(this)"></div><div class="p-name">Cannabis</div></div>
           </div>
           <span class="flavour-list-title">Flavours:</span>
           <ul class="flavour-list" id="can-list">
             <li data-range="can" data-id="can-lemon" data-img="Yamas/yamas can lemon.png" data-name="Lemon and Honey 330ml"><strong>Green Tea with Lemon and Honey</strong></li>
+            <li data-range="can" data-id="can-blueberry" data-img="Yamas/yamas can bluberry.png" data-name="Blueberry 330ml Can"><strong>Green Tea with Blueberry</strong></li>
+            <li data-range="can" data-id="can-cannabis" data-img="Yamas/yamas can canabis .jpg" data-name="Cannabis 330ml Can"><strong>Green Tea with Cannabis</strong></li>
             <li data-range="can" data-id="can-peach" data-img="Yamas/yamas can peach.png" data-name="Peach and Honey 330ml"><strong>Black Tea with Peach and Honey</strong></li>
             <li data-range="can" data-id="can-pom" data-img="Yamas/yamas can pomegranate.png" data-name="Pomegranate and Honey 330ml"><strong>White Tea with Pomegranate and Honey</strong></li>
             <li data-range="can" data-id="can-grapefruit" data-img="Yamas/Grapefruit can.png" data-name="Pink Grapefruit 330ml"><strong>White Tea with Pink Grapefruit</strong></li>
@@ -405,7 +410,7 @@ footer.site-footer a{color:rgba(255,255,255,.7);}footer.site-footer a:hover{colo
       <div class="range-card-inner-split">
         <div class="range-stage-col">
           <div class="range-stage-top-controls">
-            <div class="stage-badge" id="bottle-badge"><span class="dot"></span><span id="bottle-badge-text">Showing: All 7 Bottles</span></div>
+            <div class="stage-badge" id="bottle-badge"><span class="dot"></span><span id="bottle-badge-text">Showing: All 8 Bottles</span></div>
             <button class="stage-reset-btn" onclick="resetRangeView('bottle')">&#8634; View All</button>
           </div>
           <div class="range-floating-img-stage">
@@ -425,10 +430,12 @@ footer.site-footer a{color:rgba(255,255,255,.7);}footer.site-footer a:hover{colo
             <div class="flavour-pill" data-range="bottle" data-id="b-blue" data-img="Yamas/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry 360ml"><div class="thumb-stage"><img src="Yamas/GREEN TEA WITH BLUEBERRIES.png" alt="Blueberry Bottle" onerror="imgFallback(this)"></div><div class="p-name">Blueberry</div></div>
             <div class="flavour-pill" data-range="bottle" data-id="b-grape" data-img="Yamas/White tea and grapefruit.jpeg" data-name="Pink Grapefruit 360ml"><div class="thumb-stage"><img src="Yamas/White tea and grapefruit.jpeg" alt="Grapefruit Bottle" onerror="imgFallback(this)"></div><div class="p-name">Pink Grapefruit</div></div>
             <div class="flavour-pill" data-range="bottle" data-id="b-matcha" data-img="Yamas/Matcha green tea W.jpeg.png" data-name="Matcha 360ml"><div class="thumb-stage"><img src="Yamas/Matcha green tea W.jpeg.png" alt="Matcha Bottle" onerror="imgFallback(this)"></div><div class="p-name">Matcha</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-cannabis" data-img="Yamas/yamas can canabis .jpg" data-name="Cannabis 360ml Bottle"><div class="thumb-stage"><img src="Yamas/yamas can canabis .jpg" alt="Cannabis Bottle" onerror="imgFallback(this)"></div><div class="p-name">Cannabis</div></div>
           </div>
           <span class="flavour-list-title">Flavours:</span>
           <ul class="flavour-list" id="bottle-list">
             <li data-range="bottle" data-id="b-lemon" data-img="Yamas/Green tea lemon &amp; honey.png" data-name="Lemon and Honey 360ml"><strong>Green Tea with Lemon and Honey</strong></li>
+            <li data-range="bottle" data-id="b-cannabis" data-img="Yamas/yamas can canabis .jpg" data-name="Cannabis 360ml Bottle"><strong>Green Tea with Cannabis</strong></li>
             <li data-range="bottle" data-id="b-peach" data-img="Yamas/BLACK TEA WITH PEACH &amp; HONEY.png" data-name="Peach and Honey 360ml"><strong>Black Tea with Peach and Honey</strong></li>
             <li data-range="bottle" data-id="b-pom" data-img="Yamas/WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" data-name="Pomegranate and Honey 360ml"><strong>White Tea with Pomegranate and Honey</strong></li>
             <li data-range="bottle" data-id="b-mango" data-img="Yamas/GREEN TEA WITH MANGO &amp; HONEY.png" data-name="Mango and Honey 360ml"><strong>Green Tea with Mango and Honey</strong></li>
