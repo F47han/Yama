@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YAMAS Iced Tea – Option 2 Dark Luxury | Treasures from Greece</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;--bg4:#252525;--gold:#c9a227;--goldl:#e8c96a;--goldd:#9a7a18;--txt:#f0ece4;--muted:#998e7a;--dim:#6a6154;--bdr:rgba(201,162,39,.15);--bdrb:rgba(201,162,39,.4);--sgold:0 8px 32px rgba(201,162,39,.12);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;transition:all .25s;}ul{list-style:none;}img{max-width:100%;height:auto;display:block;}
+
+/* DESIGN PICKER BAR */
+.design-bar{background:#060606;border-bottom:1px solid var(--bdr);padding:9px 40px;display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+.design-bar .db-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-right:18px;white-space:nowrap;}
+.design-bar .db-links{display:flex;gap:4px;flex-wrap:wrap;}
+.design-bar a{font-size:12px;font-weight:600;letter-spacing:.5px;padding:5px 14px;border-radius:3px;border:1px solid transparent;color:var(--muted);transition:all .2s;}
+.design-bar a:hover{color:var(--gold);border-color:var(--bdrb);}
+.design-bar a.active{color:var(--gold);border-color:var(--bdrb);background:rgba(201,162,39,.07);}
+
+/* TOPBAR */
+.topbar{background:#050505;border-bottom:1px solid var(--bdr);color:var(--muted);font-size:12.5px;letter-spacing:.5px;display:flex;align-items:center;justify-content:space-between;padding:10px 40px;flex-wrap:wrap;gap:10px;}
+.topbar .call-us{font-weight:600;color:var(--gold);display:flex;align-items:center;gap:6px;}
+.topbar .call-us a{color:var(--txt);font-weight:400;}
+.topbar .call-us a:hover{color:var(--gold);}
+.topbar .tagline{flex:1;text-align:center;font-style:italic;font-size:12px;}
+.topbar .socials{display:flex;gap:8px;}
+.topbar .socials a{color:var(--muted);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:1px solid var(--bdr);}
+.topbar .socials a:hover{color:var(--gold);border-color:var(--goldd);}
+
+/* HEADER */
+header.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:var(--bg);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:1000;}
+.logo{display:flex;align-items:center;gap:14px;}
+.logo img{height:56px;width:auto;object-fit:contain;}
+.logo-text{font-family:'Cormorant Garamond',serif;color:var(--gold);line-height:1.2;}
+nav.main-nav ul{display:flex;gap:34px;align-items:center;}
+nav.main-nav a{font-size:12.5px;letter-spacing:2px;color:var(--muted);padding:6px 0;border-bottom:1px solid transparent;font-weight:600;text-transform:uppercase;}
+nav.main-nav a.active,nav.main-nav a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* LAYOUT */
+.container{max-width:1240px;margin:0 auto;padding:0 40px;}
+
+/* HERO */
+.hero-wrap{background:radial-gradient(ellipse at 40% 60%,rgba(122,17,48,.14) 0%,transparent 65%),var(--bg);padding:80px 0 60px;}
+.hero{display:flex;align-items:center;gap:60px;flex-wrap:wrap;}
+.hero-media{flex:1.1;min-width:320px;}
+.bottle-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.strip-card{background:var(--bg3);border-radius:12px;border:1px solid var(--bdr);overflow:hidden;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;}
+.strip-card:hover{border-color:var(--bdrb);transform:translateY(-6px);box-shadow:0 16px 40px rgba(201,162,39,.12);}
+.strip-card .img-box{height:230px;background:var(--bg2);display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden;}
+.strip-card .img-box img{width:100%;height:100%;object-fit:contain;transition:transform .4s;}
+.strip-card:hover .img-box img{transform:scale(1.08);}
+.strip-card .label{padding:10px 8px;text-align:center;font-size:11px;font-weight:600;color:var(--gold);background:var(--bg4);letter-spacing:1.5px;text-transform:uppercase;border-top:1px solid var(--bdr);}
+.hero-text{flex:1;min-width:320px;}
+.eyebrow{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid var(--bdrb);padding:6px 14px;border-radius:3px;margin-bottom:20px;}
+.hero-text h2{font-family:'Cormorant Garamond',serif;font-size:48px;line-height:1.12;font-weight:700;color:var(--txt);margin-bottom:18px;}
+.hero-text h2 span{color:var(--gold);}
+.hero-sublead{font-size:17px;color:var(--muted);font-style:italic;margin-bottom:20px;line-height:1.6;}
+.hero-text p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:16px;}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#0e0e0e;padding:13px 28px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--gold);transition:all .25s;cursor:pointer;}
+.btn:hover{background:var(--goldl);border-color:var(--goldl);transform:translateY(-2px);box-shadow:var(--sgold);}
+.btn.outline{background:transparent;color:var(--gold);border-color:var(--bdrb);}
+.btn.outline:hover{background:rgba(201,162,39,.1);transform:translateY(-2px);}
+.gold-rule{border:none;height:1px;background:linear-gradient(to right,transparent,var(--goldd),transparent);margin:0;opacity:.4;}
+
+/* VIDEO */
+.video-section{background:var(--bg2);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:80px 0;}
+.video-layout{display:flex;gap:50px;align-items:center;flex-wrap:wrap;}
+.video-player-wrap{flex:1.5;min-width:360px;border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 40px rgba(201,162,39,.08);border:1px solid var(--bdrb);}
+.video-player-wrap video{width:100%;height:auto;max-height:580px;display:block;object-fit:cover;}
+.video-content{flex:1;min-width:280px;}
+.badge{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:12px;}
+.video-content h3{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--txt);margin-bottom:16px;line-height:1.25;}
+.video-content p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:24px;}
+.video-highlights{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px;}
+.v-highlight-item{background:var(--bg4);padding:12px 16px;border-radius:4px;border-left:2px solid var(--goldd);font-size:13.5px;color:var(--muted);}
+
+/* SECTIONS */
+.section{padding:70px 0;border-top:1px solid var(--bdr);}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--gold);margin-bottom:20px;font-weight:600;letter-spacing:1px;position:relative;display:inline-block;}
+.section h2::after{content:"";display:block;width:40px;height:1px;background:var(--goldd);margin-top:10px;}
+.section p{color:var(--muted);max-width:900px;font-size:15.5px;line-height:1.8;margin-bottom:16px;}
+.section-alt{background:var(--bg2);}
+
+/* STORY */
+.story-box{background:var(--bg3);border-left:3px solid var(--goldd);padding:24px 30px;border-radius:0 8px 8px 0;margin-top:24px;}
+.story-box strong{color:var(--gold);}
+.story-box p{margin-bottom:0;}
+
+/* INGREDIENT CARDS */
+.ingredient-callout{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+.ingredient-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:10px;padding:26px;transition:all .25s;}
+.ingredient-card:hover{border-color:var(--bdrb);transform:translateY(-3px);}
+.ingredient-card .icon{font-size:26px;margin-bottom:12px;display:block;}
+.ingredient-card h4{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);margin-bottom:8px;}
+.ingredient-card p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:0;}
+
+/* WHY GRID */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:26px;}
+.why-item{background:var(--bg3);border:1px solid var(--bdr);padding:13px 18px;border-radius:4px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:12px;transition:all .2s;}
+.why-item::before{content:"✦";color:var(--goldd);font-size:10px;}
+.why-item:hover{border-color:var(--bdrb);color:var(--txt);background:var(--bg4);}
+
+/* RANGE */
+.range-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-top:36px;}
+.range-card{border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:var(--bg3);transition:border-color .25s;}
+.range-card:hover{border-color:var(--bdrb);}
+.range-card-header{background:linear-gradient(135deg,#140710 0%,var(--bg4) 100%);border-bottom:1px solid var(--bdr);padding:24px 32px;}
+.range-card-header h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);margin-bottom:6px;}
+.range-card-header span{font-size:14px;color:var(--muted);line-height:1.55;display:block;}
+.range-card-inner-split{display:flex;align-items:stretch;flex-wrap:wrap;}
+.range-stage-col{flex:0 0 360px;max-width:360px;background:radial-gradient(circle at center,var(--bg4) 0%,var(--bg2) 100%);border-right:1px solid var(--bdr);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;}
+.range-stage-top-controls{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.stage-badge{background:rgba(201,162,39,.12);color:var(--gold);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid var(--bdr);display:inline-flex;align-items:center;gap:6px;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stage-badge span.dot{width:6px;height:6px;background:#4ade80;border-radius:50%;flex-shrink:0;}
+.stage-reset-btn{background:var(--bg);border:1px solid var(--bdr);color:var(--muted);font-size:11px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer;transition:all .2s;}
+.stage-reset-btn:hover{border-color:var(--goldd);color:var(--gold);}
+.range-floating-img-stage{flex:1;width:100%;min-height:300px;display:flex;align-items:center;justify-content:center;padding:10px;}
+.range-floating-img-stage img.main-display-img{max-height:300px;max-width:100%;width:auto;object-fit:contain;transition:opacity .22s,transform .25s;filter:drop-shadow(0 16px 28px rgba(201,162,39,.15));}
+.range-floating-img-stage img.main-display-img.fade-out{opacity:.05;transform:scale(.92);}
+.stage-footer-note{font-size:11.5px;color:var(--dim);text-align:center;margin-top:12px;font-style:italic;}
+.range-content-col{flex:1;min-width:300px;padding:30px 32px;display:flex;flex-direction:column;justify-content:space-between;}
+.range-intro-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:16px;}
+.case-pack-badge{background:rgba(201,162,39,.08);border-left:2px solid var(--goldd);color:var(--gold);font-weight:700;font-size:14px;padding:10px 16px;border-radius:0 4px 4px 0;margin-bottom:22px;display:inline-block;}
+.flavour-selector-label{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.flavour-selector-label span.tip{font-size:11px;font-weight:400;text-transform:none;font-style:italic;}
+.flavour-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-bottom:22px;}
+.flavour-pill{background:var(--bg2);border:1px solid var(--bdr);border-radius:8px;padding:10px 6px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;cursor:pointer;position:relative;user-select:none;transition:all .2s;}
+.flavour-pill:hover{border-color:var(--bdrb);background:var(--bg4);transform:translateY(-3px);}
+.flavour-pill.active{border-color:var(--gold);background:rgba(201,162,39,.06);box-shadow:var(--sgold);transform:translateY(-3px);}
+.flavour-pill.active::after{content:"◆";position:absolute;top:-9px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:9px;}
+.flavour-pill .thumb-stage{height:72px;width:100%;display:flex;align-items:center;justify-content:center;margin-bottom:6px;overflow:hidden;}
+.flavour-pill .thumb-stage img{max-height:68px;max-width:100%;object-fit:contain;transition:transform .25s;}
+.flavour-pill:hover .thumb-stage img,.flavour-pill.active .thumb-stage img{transform:scale(1.1);}
+.flavour-pill .p-name{font-size:11px;font-weight:600;color:var(--muted);line-height:1.3;}
+.flavour-pill.active .p-name{color:var(--gold);}
+.flavour-list-title{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:8px;display:block;}
+.flavour-list{border-top:1px solid var(--bdr);padding-top:10px;}
+.flavour-list li{padding:9px 12px;border-radius:4px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;border-bottom:1px solid var(--bdr);}
+.flavour-list li:hover{background:var(--bg4);color:var(--txt);}
+.flavour-list li.active{background:rgba(201,162,39,.07);border-left:2px solid var(--gold);padding-left:14px;color:var(--gold);}
+.flavour-list li:last-child{border-bottom:none;}
+.flavour-list li::before{content:"▸";color:var(--goldd);font-size:12px;}
+.flavour-list li strong{font-weight:600;}
+
+/* LOGISTICS */
+.logistics-section{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:34px;margin-top:40px;}
+.logistics-section h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold);margin-bottom:16px;}
+.logistics-section p{color:var(--muted);font-size:14.5px;margin-bottom:14px;}
+.specs-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+.specs-table th{background:#080808;color:var(--gold);padding:14px 18px;text-align:left;font-family:'Cormorant Garamond',serif;font-size:15px;border-bottom:1px solid var(--bdr);}
+.specs-table td{padding:13px 18px;border-bottom:1px solid var(--bdr);color:var(--muted);}
+.specs-table tr:nth-child(even) td{background:var(--bg4);}
+.specs-table tr:last-child td{border-bottom:none;}
+.specs-table strong{color:var(--gold);}
+
+/* SERVING */
+.serving-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:26px;}
+.serving-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:8px;padding:24px;transition:border-color .2s;}
+.serving-card:hover{border-color:var(--bdrb);}
+.serving-card h4{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.serving-card p{font-size:14px;color:var(--muted);line-height:1.7;}
+
+/* AUDIENCE */
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:24px;}
+.audience-grid div{background:var(--bg3);border:1px solid var(--bdr);padding:13px 16px;font-size:14px;color:var(--muted);border-radius:4px;display:flex;align-items:center;gap:10px;transition:all .2s;}
+.audience-grid div::before{content:"✦";color:var(--goldd);font-size:9px;}
+.audience-grid div:hover{border-color:var(--bdrb);color:var(--txt);}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:24px;}
+.faq-item{background:var(--bg3);border:1px solid var(--bdr);border-radius:8px;padding:22px;}
+.faq-item h4{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);margin-bottom:8px;}
+.faq-item p{font-size:13.5px;color:var(--muted);line-height:1.65;}
+
+/* CONTACT */
+.contact-section{background:radial-gradient(ellipse at 30% 50%,rgba(122,17,48,.12) 0%,transparent 60%),var(--bg2);border-top:1px solid var(--bdr);padding:90px 40px;text-align:center;}
+.contact-section h2{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--gold);margin-bottom:14px;}
+.contact-section p.contact-intro{color:var(--muted);max-width:680px;margin:0 auto 36px;font-size:16px;line-height:1.8;}
+.contact-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+.contact-card{max-width:560px;margin:0 auto;background:var(--bg3);padding:36px;border-radius:10px;border:1px solid var(--bdrb);box-shadow:var(--sgold);}
+.contact-details{font-size:14.5px;color:var(--muted);}
+.contact-details p{margin-bottom:6px;}
+.contact-details strong{color:var(--gold);}
+.contact-details a{color:var(--gold);font-weight:600;}
+.contact-details a:hover{text-decoration:underline;}
+.distributor-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--bdr);font-style:italic;color:var(--dim);font-size:13px;}
+
+footer.site-footer{background:#060606;border-top:1px solid var(--bdr);color:var(--dim);text-align:center;padding:30px 20px;font-size:13px;}
+footer.site-footer a{color:var(--goldd);}footer.site-footer a:hover{color:var(--gold);}
+
+@media(max-width:990px){.hero{flex-direction:column-reverse;gap:30px;}.range-stage-col{flex:1 1 100%;max-width:100%;border-right:none;border-bottom:1px solid var(--bdr);}.video-layout{flex-direction:column;}.video-player-wrap{min-width:100%;width:100%;}}
+@media(max-width:768px){.topbar,.design-bar{flex-direction:column;text-align:center;padding:10px 20px;gap:8px;}header.site-header{flex-direction:column;gap:16px;padding:16px 20px;}nav.main-nav ul{gap:18px;flex-wrap:wrap;justify-content:center;}.container{padding:0 20px;}.bottle-strip{grid-template-columns:1fr;}.contact-section{padding:60px 20px;}.video-highlights{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- DESIGN PICKER BAR -->
+<div class="design-bar">
+  <span class="db-label">&#127912; Design Options:</span>
+  <div class="db-links">
+    <a href="index.html">Option 1 &#8212; Classic</a>
+    <a href="design2.html" class="active">Option 2 &#8212; Dark Luxury</a>
+    <a href="design3.html">Option 3 &#8212; Bold Modern</a>
+    <a href="design4.html">Option 4 &#8212; Minimal Clean</a>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="call-us">CALL US: <a href="tel:07377232822">07377232822</a> , <a href="tel:07377232797">07377232797</a></div>
+  <div class="tagline">Wines from Greece, the provenance of Dionysus, God of wine and pleasure</div>
+  <div class="socials">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">&#9678;</a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+  </div>
+</div>
+
+<!-- HEADER / NAV -->
+<header class="site-header">
+  <div class="logo">
+    <a href="https://treasuresfromgreece.co.uk/" style="display:flex;align-items:center;gap:14px;">
+      <img src="Yamas/TFGLogo.png" alt="Treasures from Greece" onerror="imgFallback(this)">
+      <div class="logo-text">
+        <div style="font-size:22px;font-weight:700;">TFG</div>
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);">Treasures from Greece</div>
+      </div>
+    </a>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="https://treasuresfromgreece.co.uk/">HOME</a></li>
+      <li><a href="https://treasuresfromgreece.co.uk/our-partners/">OUR PARTNERS</a></li>
+      <li><a href="design2.html" class="active">YAMAS ICED TEA</a></li>
+      <li><a href="https://treasuresfromgreece.co.uk/contact-us/">CONTACT US</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero-wrap">
+<div class="container">
+  <div class="hero">
+    <div class="hero-media">
+      <div class="bottle-strip">
+        <div class="strip-card" onclick="document.getElementById('can-range-card').scrollIntoView({behavior:'smooth'})">
+          <div class="img-box"><img src="Yamas/Yamas cans new p.jpeg" alt="330ml Cans" onerror="imgFallback(this)"></div>
+          <div class="label">330ml Cans &#8595;</div>
+        </div>
+        <div class="strip-card" onclick="document.getElementById('bottle-range-card').scrollIntoView({behavior:'smooth'})">
+          <div class="img-box"><img src="Yamas/Glass bottles .jpeg" alt="360ml Bottles" onerror="imgFallback(this)"></div>
+          <div class="label">360ml Bottles &#8595;</div>
+        </div>
+        <div class="strip-card" onclick="document.getElementById('video-tour').scrollIntoView({behavior:'smooth'})">
+          <div class="img-box"><img src="Yamas/New Flavours.png" alt="New Flavours" onerror="imgFallback(this)"></div>
+          <div class="label">Watch Video &#8595;</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-text">
+      <span class="eyebrow">Now Available in the UK</span>
+      <h2>YAMAS<br><span>Hellenic</span><br>Iced Tea</h2>
+      <div class="hero-sublead">Discover a new generation of premium iced tea, inspired by the flavours, colours and spirit of Greece.</div>
+      <p>YAMAS Hellenic Iced Tea combines carefully selected tea varieties, contemporary fruit flavours and natural Greek honey to create a distinctive and refreshing drink with a strong Mediterranean identity.</p>
+      <p>T.F.G. Imports Ltd, based in Edinburgh, is the exclusive UK importer and distributor of YAMAS Hellenic Iced Tea, supplying retailers, wholesalers, cafes, restaurants, hotels, pubs, delicatessens, convenience stores and other foodservice businesses throughout the United Kingdom.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn">REQUEST WHOLESALE PRICES</a>
+        <a href="#contact" class="btn outline">REQUEST SAMPLES</a>
+        <a href="#video-tour" class="btn outline" style="border-color:rgba(255,255,255,.1);color:var(--muted);">&#9654; Watch Video</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIDEO -->
+<section class="video-section" id="video-tour">
+  <div class="container">
+    <div class="video-layout">
+      <div class="video-player-wrap">
+        <video controls autoplay muted loop playsinline poster="Yamas/New Flavours.png">
+          <source src="Yamas/yamas-video-cans.mp4" type="video/mp4">
+          <source src="Yamas/Yamas video cans .mp4" type="video/mp4">
+          <source src="images/yamas-video-cans.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-content">
+        <span class="badge">Brand Experience</span>
+        <h3>Experience Pure Greek Vitality &amp; Refreshment</h3>
+        <p>Watch the YAMAS cans in action. From vibrant fruit infusions to the smooth sweetness of natural Greek honey, YAMAS brings a sunshine-filled Mediterranean lifestyle directly to UK shelves and dining tables.</p>
+        <div class="video-highlights">
+          <div class="v-highlight-item">&#127807; 100% Brewed Leaf Teas</div>
+          <div class="v-highlight-item">&#127855; Real Greek Honey</div>
+          <div class="v-highlight-item">&#9889; Natural Refreshment</div>
+          <div class="v-highlight-item">&#9851; 100% Recyclable Packaging</div>
+        </div>
+        <a href="#contact" class="btn">Order Trial Pack for Your Venue</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="container">
+<div class="section">
+  <h2>A Modern Greek Iced Tea</h2>
+  <p>YAMAS is more than an ordinary iced tea. It brings together authentic Greek character, premium ingredients, modern flavours and eye-catching packaging.</p>
+  <p>The range has been developed for consumers looking for something different from traditional soft drinks: a refreshing, flavourful and contemporary beverage with a distinctive story and strong shelf presence.</p>
+  <div class="story-box">
+    <p>The name <strong>"YAMAS"</strong> comes from the Greek expression meaning <em>"To our health"</em> or <em>"Cheers"</em>, reflecting the brand's philosophy of friendship, enjoyment and sharing life's special moments.</p>
+  </div>
+  <div class="ingredient-callout">
+    <div class="ingredient-card"><span class="icon">&#127855;</span><h4>Pure Greek Honey</h4><p>Sweetened naturally with premium unpasteurized honey harvested from traditional Greek apiaries, providing a rounded, gentle sweetness without synthetic aftertaste.</p></div>
+    <div class="ingredient-card"><span class="icon">&#127811;</span><h4>Selected Whole Tea Leaves</h4><p>Carefully selected Green, White, and Black tea varieties slowly extracted to preserve delicate herbal notes and abundant natural tea antioxidants (polyphenols).</p></div>
+    <div class="ingredient-card"><span class="icon">&#127819;</span><h4>Authentic Fruit Juices</h4><p>Infused with real Mediterranean fruit juices including Greek lemons, sun-ripened peaches, ruby pomegranates, and pink grapefruit for genuine flavour complexity.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- WHY CHOOSE -->
+<div class="section-alt">
+<div class="container">
+<div class="section" style="border-top:none;">
+  <h2>Why Choose YAMAS?</h2>
+  <div class="why-grid">
+    <div class="why-item">Made in Greece</div><div class="why-item">Made with natural Greek honey</div>
+    <div class="why-item">Low in calories</div><div class="why-item">Gluten-free</div>
+    <div class="why-item">Non-GMO</div><div class="why-item">Vegetarian-friendly</div>
+    <div class="why-item">Distinctive contemporary flavours</div><div class="why-item">Premium cans and glass bottles</div>
+    <div class="why-item">Strong visual impact and shelf presence</div><div class="why-item">Suitable for retail, hospitality and foodservice</div>
+    <div class="why-item">12-month shelf life</div><div class="why-item">Available for wholesale supply throughout the UK</div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- RANGE -->
+<div class="container">
+<div class="section" id="range">
+  <h2>The Range</h2>
+  <p>Two distinct formats designed to suit every kind of commercial outlet &#8212; from grab-and-go convenience retail to premium hospitality venues.</p>
+  <div class="range-grid">
+
+    <!-- 330ML CANS -->
+    <div class="range-card" id="can-range-card">
+      <div class="range-card-header">
+        <h3>YAMAS 330ML CAN RANGE</h3>
+        <span>Ideal for convenience retail, cafes, coffee shops, vending, universities, travel outlets, grab-and-go locations, restaurants, pubs and hospitality venues.</span>
+      </div>
+      <div class="range-card-inner-split">
+        <div class="range-stage-col">
+          <div class="range-stage-top-controls">
+            <div class="stage-badge" id="can-badge"><span class="dot"></span><span id="can-badge-text">Showing: All 5 Cans</span></div>
+            <button class="stage-reset-btn" onclick="resetRangeView('can')">&#8634; View All</button>
+          </div>
+          <div class="range-floating-img-stage">
+            <img id="can-main-img" class="main-display-img" src="Yamas/Yamas cans new p.jpeg" alt="YAMAS 330ml Cans" onerror="imgFallback(this)">
+          </div>
+          <div class="stage-footer-note">Tip: Click any flavour below to change photo</div>
+        </div>
+        <div class="range-content-col">
+          <p class="range-intro-desc">The convenient 330ml can format is ideal for convenience retail, cafes, coffee shops, vending, universities, travel outlets, grab-and-go locations, restaurants, pubs and hospitality venues.</p>
+          <div class="case-pack-badge">Available in cases of 24 cans.</div>
+          <div class="flavour-selector-label"><span>Select Flavour to View:</span><span class="tip">Interactive Photo Selector</span></div>
+          <div class="flavour-gallery" id="can-gallery">
+            <div class="flavour-pill" data-range="can" data-id="can-lemon" data-img="Yamas/yamas can lemon.png" data-name="Lemon and Honey 330ml"><div class="thumb-stage"><img src="Yamas/yamas can lemon.png" alt="Lemon Can" onerror="imgFallback(this)"></div><div class="p-name">Lemon &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="can" data-id="can-peach" data-img="Yamas/yamas can peach.png" data-name="Peach and Honey 330ml"><div class="thumb-stage"><img src="Yamas/yamas can peach.png" alt="Peach Can" onerror="imgFallback(this)"></div><div class="p-name">Peach &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="can" data-id="can-pom" data-img="Yamas/yamas can pomegranate.png" data-name="Pomegranate and Honey 330ml"><div class="thumb-stage"><img src="Yamas/yamas can pomegranate.png" alt="Pomegranate Can" onerror="imgFallback(this)"></div><div class="p-name">Pomegranate &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="can" data-id="can-grapefruit" data-img="Yamas/Grapefruit can.png" data-name="Pink Grapefruit 330ml"><div class="thumb-stage"><img src="Yamas/Grapefruit can.png" alt="Grapefruit Can" onerror="imgFallback(this)"></div><div class="p-name">Pink Grapefruit</div></div>
+            <div class="flavour-pill" data-range="can" data-id="can-matcha" data-img="Yamas/Matcha can.png" data-name="Matcha and Yuzu 330ml"><div class="thumb-stage"><img src="Yamas/Matcha can.png" alt="Matcha Can" onerror="imgFallback(this)"></div><div class="p-name">Matcha &amp; Yuzu</div></div>
+          </div>
+          <span class="flavour-list-title">Flavours:</span>
+          <ul class="flavour-list" id="can-list">
+            <li data-range="can" data-id="can-lemon" data-img="Yamas/yamas can lemon.png" data-name="Lemon and Honey 330ml"><strong>Green Tea with Lemon and Honey</strong></li>
+            <li data-range="can" data-id="can-peach" data-img="Yamas/yamas can peach.png" data-name="Peach and Honey 330ml"><strong>Black Tea with Peach and Honey</strong></li>
+            <li data-range="can" data-id="can-pom" data-img="Yamas/yamas can pomegranate.png" data-name="Pomegranate and Honey 330ml"><strong>White Tea with Pomegranate and Honey</strong></li>
+            <li data-range="can" data-id="can-grapefruit" data-img="Yamas/Grapefruit can.png" data-name="Pink Grapefruit 330ml"><strong>White Tea with Pink Grapefruit</strong></li>
+            <li data-range="can" data-id="can-matcha" data-img="Yamas/Matcha can.png" data-name="Matcha and Yuzu 330ml"><strong>Green Tea with Matcha and Yuzu</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 360ML BOTTLES -->
+    <div class="range-card" id="bottle-range-card">
+      <div class="range-card-header">
+        <h3>YAMAS 360ML GLASS BOTTLE RANGE</h3>
+        <span>The premium 360ml glass bottle offers excellent presentation for cafes, restaurants, bars, hotels, delicatessens and premium retail environments.</span>
+      </div>
+      <div class="range-card-inner-split">
+        <div class="range-stage-col">
+          <div class="range-stage-top-controls">
+            <div class="stage-badge" id="bottle-badge"><span class="dot"></span><span id="bottle-badge-text">Showing: All 7 Bottles</span></div>
+            <button class="stage-reset-btn" onclick="resetRangeView('bottle')">&#8634; View All</button>
+          </div>
+          <div class="range-floating-img-stage">
+            <img id="bottle-main-img" class="main-display-img" src="Yamas/Glass bottles .jpeg" alt="YAMAS 360ml Bottles" onerror="imgFallback(this)">
+          </div>
+          <div class="stage-footer-note">Tip: Click any flavour below to change photo</div>
+        </div>
+        <div class="range-content-col">
+          <p class="range-intro-desc">The premium 360ml glass bottle offers excellent presentation for cafes, restaurants, bars, hotels, delicatessens and premium retail environments.</p>
+          <div class="case-pack-badge">Available in cases of 12 bottles.</div>
+          <div class="flavour-selector-label"><span>Select Flavour to View:</span><span class="tip">Interactive Photo Selector</span></div>
+          <div class="flavour-gallery" id="bottle-gallery">
+            <div class="flavour-pill" data-range="bottle" data-id="b-lemon" data-img="Yamas/Green tea lemon &amp; honey.png" data-name="Lemon and Honey 360ml"><div class="thumb-stage"><img src="Yamas/Green tea lemon &amp; honey.png" alt="Lemon Bottle" onerror="imgFallback(this)"></div><div class="p-name">Lemon &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-peach" data-img="Yamas/BLACK TEA WITH PEACH &amp; HONEY.png" data-name="Peach and Honey 360ml"><div class="thumb-stage"><img src="Yamas/BLACK TEA WITH PEACH &amp; HONEY.png" alt="Peach Bottle" onerror="imgFallback(this)"></div><div class="p-name">Peach &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-pom" data-img="Yamas/WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" data-name="Pomegranate and Honey 360ml"><div class="thumb-stage"><img src="Yamas/WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" alt="Pomegranate Bottle" onerror="imgFallback(this)"></div><div class="p-name">Pomegranate &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-mango" data-img="Yamas/GREEN TEA WITH MANGO &amp; HONEY.png" data-name="Mango and Honey 360ml"><div class="thumb-stage"><img src="Yamas/GREEN TEA WITH MANGO &amp; HONEY.png" alt="Mango Bottle" onerror="imgFallback(this)"></div><div class="p-name">Mango &amp; Honey</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-blue" data-img="Yamas/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry 360ml"><div class="thumb-stage"><img src="Yamas/GREEN TEA WITH BLUEBERRIES.png" alt="Blueberry Bottle" onerror="imgFallback(this)"></div><div class="p-name">Blueberry</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-grape" data-img="Yamas/White tea and grapefruit.jpeg" data-name="Pink Grapefruit 360ml"><div class="thumb-stage"><img src="Yamas/White tea and grapefruit.jpeg" alt="Grapefruit Bottle" onerror="imgFallback(this)"></div><div class="p-name">Pink Grapefruit</div></div>
+            <div class="flavour-pill" data-range="bottle" data-id="b-matcha" data-img="Yamas/Matcha green tea W.jpeg.png" data-name="Matcha 360ml"><div class="thumb-stage"><img src="Yamas/Matcha green tea W.jpeg.png" alt="Matcha Bottle" onerror="imgFallback(this)"></div><div class="p-name">Matcha</div></div>
+          </div>
+          <span class="flavour-list-title">Flavours:</span>
+          <ul class="flavour-list" id="bottle-list">
+            <li data-range="bottle" data-id="b-lemon" data-img="Yamas/Green tea lemon &amp; honey.png" data-name="Lemon and Honey 360ml"><strong>Green Tea with Lemon and Honey</strong></li>
+            <li data-range="bottle" data-id="b-peach" data-img="Yamas/BLACK TEA WITH PEACH &amp; HONEY.png" data-name="Peach and Honey 360ml"><strong>Black Tea with Peach and Honey</strong></li>
+            <li data-range="bottle" data-id="b-pom" data-img="Yamas/WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" data-name="Pomegranate and Honey 360ml"><strong>White Tea with Pomegranate and Honey</strong></li>
+            <li data-range="bottle" data-id="b-mango" data-img="Yamas/GREEN TEA WITH MANGO &amp; HONEY.png" data-name="Mango and Honey 360ml"><strong>Green Tea with Mango and Honey</strong></li>
+            <li data-range="bottle" data-id="b-blue" data-img="Yamas/GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry 360ml"><strong>Green Tea with Blueberry</strong></li>
+            <li data-range="bottle" data-id="b-grape" data-img="Yamas/White tea and grapefruit.jpeg" data-name="Pink Grapefruit 360ml"><strong>White Tea with Pink Grapefruit</strong></li>
+            <li data-range="bottle" data-id="b-matcha" data-img="Yamas/Matcha green tea W.jpeg.png" data-name="Matcha 360ml"><strong>Green Tea with Matcha</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specs Table -->
+  <div class="logistics-section">
+    <h3>Trade &amp; Logistics Specifications</h3>
+    <p>Detailed product information for UK procurement teams, beverage managers, and distribution hubs:</p>
+    <table class="specs-table">
+      <thead><tr><th>Specification</th><th>330ml Can Range</th><th>360ml Glass Bottle Range</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Format &amp; Material</strong></td><td>Sleek Aluminium Can (100% Recyclable)</td><td>Embossed Flint Glass Bottle</td></tr>
+        <tr><td><strong>Case Pack Size</strong></td><td>24 cans per case / tray</td><td>12 bottles per case / tray</td></tr>
+        <tr><td><strong>Shelf Life</strong></td><td>12 Months from manufacture date</td><td>12 Months from manufacture date</td></tr>
+        <tr><td><strong>Sweetener Profile</strong></td><td>Natural Greek Honey + Sugar</td><td>Natural Greek Honey + Sugar</td></tr>
+        <tr><td><strong>Calorie Profile</strong></td><td>Low Calorie (~19-24 kcal / 100ml)</td><td>Low Calorie (~21-25 kcal / 100ml)</td></tr>
+        <tr><td><strong>Storage</strong></td><td>Ambient; Serve chilled at 4-6C</td><td>Ambient; Serve chilled at 4-6C</td></tr>
+        <tr><td><strong>Country of Origin</strong></td><td>Produced and Bottled in Greece</td><td>Produced and Bottled in Greece</td></tr>
+        <tr><td><strong>Exclusive UK Importer</strong></td><td>T.F.G. Imports Ltd (Edinburgh)</td><td>T.F.G. Imports Ltd (Edinburgh)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- DIFFERENT CHOICE -->
+<div class="section-alt">
+<div class="container">
+<div class="section" style="border-top:none;">
+  <h2>A Different Choice for Your Customers</h2>
+  <p>YAMAS offers businesses the opportunity to introduce a premium Greek iced tea range that stands apart from conventional soft drinks.</p>
+  <p>From the classic freshness of Lemon and Peach to contemporary flavours such as Matcha, Pink Grapefruit, Pomegranate, Mango and Blueberry, the range appeals to consumers who value flavour, quality, authenticity and attractive packaging.</p>
+  <p>YAMAS can be enjoyed on its own, served chilled over ice or used creatively as part of a non-alcoholic drink or cocktail menu.</p>
+  <div class="serving-grid">
+    <div class="serving-card"><h4>&#127950; The Perfect Serve</h4><p>Pour chilled YAMAS into a highball glass filled with cubed ice. Garnish with a fresh sprig of mint, a slice of dehydrated lemon, or freshly cracked pomegranate seeds to elevate table presentation.</p></div>
+    <div class="serving-card"><h4>&#127865; Mediterranean Mocktail</h4><p>Combine YAMAS White Tea with Pink Grapefruit with sparkling soda water, fresh rosemary, and a dash of elderflower cordial for an upscale, alcohol-free summer spritz.</p></div>
+    <div class="serving-card"><h4>&#129346; Hospitality Cocktail Pairing</h4><p>Shake YAMAS Green Tea with Lemon and Honey with London dry gin or Greek Tsipouro, fresh basil, and ice. Strain into a coupe for a signature cocktail that commands premium menu pricing.</p></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- WHOLESALE -->
+<div class="container">
+<div class="section">
+  <h2>Wholesale and Foodservice Supply</h2>
+  <p>T.F.G. Imports works with businesses across the UK, including:</p>
+  <div class="audience-grid">
+    <div>Wholesalers and distributors</div><div>Supermarkets and independent retailers</div>
+    <div>Convenience stores</div><div>Coffee shops and cafe groups</div>
+    <div>Restaurants and Greek restaurants</div><div>Hotels and hospitality venues</div>
+    <div>Pubs and bars</div><div>Delicatessens and farm shops</div>
+    <div>Universities and travel outlets</div><div>Vending and grab-and-go operators</div>
+  </div>
+  <p style="margin-top:24px;">Wholesale pricing, product specifications, samples and point-of-sale promotional materials are available upon request.</p>
+  <div class="faq-grid">
+    <div class="faq-item"><h4>What are the Minimum Order Quantities?</h4><p>We supply orders ranging from mixed-case trial pallets up to multi-pallet full container loads, accommodating independent retailers and national distributors alike.</p></div>
+    <div class="faq-item"><h4>Can we receive sample packs before ordering?</h4><p>Yes. Commercial sample packs featuring both cans and glass bottles are dispatched directly from our Edinburgh warehouse for qualified trade buyers.</p></div>
+    <div class="faq-item"><h4>Are Point of Sale (POS) assets provided?</h4><p>T.F.G. Imports provides counter merchandising displays, posters, table talkers, and digital menu assets to maximize sales velocity in your outlet.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <h2>Request Pricing or Samples</h2>
+  <p class="contact-intro">Would you like to introduce YAMAS Hellenic Iced Tea to your customers?<br>Contact T.F.G. Imports to receive our wholesale price list, full product information or samples for your buying team.</p>
+  <div class="contact-buttons">
+    <a href="mailto:sales@treasuresfromgreece.co.uk?subject=Request Wholesale Prices - YAMAS" class="btn">REQUEST WHOLESALE PRICES</a>
+    <a href="mailto:sales@treasuresfromgreece.co.uk?subject=Request Samples - YAMAS" class="btn">REQUEST SAMPLES</a>
+    <a href="mailto:sales@treasuresfromgreece.co.uk?subject=Become a Stockist - YAMAS" class="btn outline">BECOME A STOCKIST</a>
+  </div>
+  <div class="contact-card">
+    <div class="contact-details">
+      <p><strong>T.F.G. Imports (Treasures From Greece) Ltd</strong></p>
+      <p>Edinburgh, United Kingdom</p>
+      <p>Email: <a href="mailto:sales@treasuresfromgreece.co.uk">sales@treasuresfromgreece.co.uk</a></p>
+      <p>Telephone: <a href="tel:07377232822">07377 232822</a></p>
+      <div class="distributor-note">Official UK importer and exclusive distributor of YAMAS Hellenic Iced Tea.</div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Treasures from Greece. All rights reserved. | Official UK Importer &amp; Distributor: T.F.G. Imports Ltd</p>
+</footer>
+
+<script>
+function imgFallback(el){if(!el||el.dataset.fallbackTried)return;el.dataset.fallbackTried="true";if(el.src.indexOf('Yamas/')!==-1)el.src=el.src.replace('Yamas/','images/');else if(el.src.indexOf('images/')!==-1)el.src=el.src.replace('images/','Yamas/');}
+const defaultImages={can:{img:'Yamas/Yamas cans new p.jpeg',name:'All 5 Cans'},bottle:{img:'Yamas/Glass bottles .jpeg',name:'All 7 Bottles'}};
+function selectFlavour(range,id,imgSrc,name){const m=document.getElementById(range+'-main-img'),b=document.getElementById(range+'-badge-text');if(!m)return;m.classList.add('fade-out');setTimeout(()=>{m.src=imgSrc;m.alt=name;if(b)b.textContent=name;m.classList.remove('fade-out');},150);const g=document.getElementById(range+'-gallery');if(g)g.querySelectorAll('.flavour-pill').forEach(p=>p.classList.toggle('active',p.getAttribute('data-id')===id));const l=document.getElementById(range+'-list');if(l)l.querySelectorAll('li').forEach(li=>li.classList.toggle('active',li.getAttribute('data-id')===id));}
+function resetRangeView(range){const def=defaultImages[range];if(!def)return;const m=document.getElementById(range+'-main-img'),b=document.getElementById(range+'-badge-text');if(!m)return;m.classList.add('fade-out');setTimeout(()=>{m.src=def.img;m.alt='YAMAS '+def.name;if(b)b.textContent='Showing: '+def.name;m.classList.remove('fade-out');},150);const g=document.getElementById(range+'-gallery');if(g)g.querySelectorAll('.flavour-pill').forEach(p=>p.classList.remove('active'));const l=document.getElementById(range+'-list');if(l)l.querySelectorAll('li').forEach(li=>li.classList.remove('active'));}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('[data-range][data-img]').forEach(el=>{el.addEventListener('click',()=>{selectFlavour(el.getAttribute('data-range'),el.getAttribute('data-id'),el.getAttribute('data-img'),el.getAttribute('data-name'));});});});
+</script>
+</body>
+</html>

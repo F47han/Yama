@@ -1025,7 +1025,27 @@
 </style>
 </head>
 <body>
- 
+
+<!-- ===== DESIGN PICKER BAR ===== -->
+<style>
+.design-bar{background:#f7f5f3;border-bottom:1px solid #e2dbd8;padding:9px 40px;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+.design-bar .db-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;margin-right:18px;white-space:nowrap;}
+.design-bar .db-links{display:flex;gap:4px;flex-wrap:wrap;}
+.design-bar a{font-size:12px;font-weight:600;letter-spacing:.3px;padding:5px 14px;border-radius:3px;border:1px solid transparent;color:#777;text-decoration:none;transition:all .2s;}
+.design-bar a:hover{color:var(--maroon);border-color:#c9a0b0;}
+.design-bar a.active{color:var(--maroon);border-color:var(--maroon);background:#fbf5f7;}
+@media(max-width:768px){.design-bar{flex-direction:column;text-align:center;padding:10px 20px;gap:8px;}.design-bar .db-links{justify-content:center;}}
+</style>
+<div class="design-bar">
+  <span class="db-label">&#127912; Design Options:</span>
+  <div class="db-links">
+    <a href="index.html" class="active">Option 1 &#8212; Classic</a>
+    <a href="design2.html">Option 2 &#8212; Dark Luxury</a>
+    <a href="design3.html">Option 3 &#8212; Bold Modern</a>
+    <a href="design4.html">Option 4 &#8212; Minimal Clean</a>
+  </div>
+</div>
+
 <!-- ===== TOP BAR ===== -->
 <div class="topbar">
   <div class="call-us">
