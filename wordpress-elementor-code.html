@@ -1,0 +1,306 @@
+<!--
+===================================================================
+YAMAS Hellenic Iced Tea - WordPress Elementor / Gutenberg Snippet
+===================================================================
+How to use in WordPress:
+1. Upload the 'Yamas' image folder to your WordPress Media Library or to /wp-content/uploads/Yamas/
+2. In Elementor or Gutenberg, add an "HTML" block / widget.
+3. Copy and paste ALL of the code below into the HTML block.
+4. If your images are located in a custom upload path, change the `YAMAS_WP_MEDIA_URL` variable at the bottom of the script section below.
+===================================================================
+-->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<div class="yamas-wp-container">
+<style>
+/* ===== SCOPED WORDPRESS STYLING ===== */
+.yamas-wp-container {
+  --aegean:#0077b6;
+  --aegean-d:#023e8a;
+  --aegean-l:#48b5e0;
+  --aegean-s:#e8f4fd;
+  --foam:#f0f8ff;
+  --sun:#f4a261;
+  --sun-d:#e07a3a;
+  --white:#ffffff;
+  --txt:#0d1b2a;
+  --txt2:#2b4a5e;
+  --txt3:#546e7a;
+  --bdr:#cde4f5;
+  --bdr2:#9ac8e8;
+  --shadow:0 4px 20px rgba(0,119,182,.1);
+  --shadow-b:0 8px 32px rgba(0,119,182,.18);
+  --shadow-lg:0 16px 48px rgba(0,119,182,.14);
+  font-family:'Inter',sans-serif;
+  color:var(--txt);
+  line-height:1.7;
+  width:100%;
+  overflow-x:hidden;
+  background:var(--white);
+}
+.yamas-wp-container * { box-sizing:border-box; }
+.yamas-wp-container a { text-decoration:none; color:inherit; transition:all .25s; }
+.yamas-wp-container ul { list-style:none; margin:0; padding:0; }
+.yamas-wp-container img { max-width:100%; height:auto; display:block; }
+
+/* TOPBAR */
+.yamas-wp-container .topbar { background:var(--aegean-d); color:rgba(255,255,255,.85); font-size:12.5px; display:flex; align-items:center; justify-content:space-between; padding:9px 40px; flex-wrap:wrap; gap:10px; }
+.yamas-wp-container .topbar .tb-contact { display:flex; align-items:center; gap:24px; }
+.yamas-wp-container .topbar .tb-contact a { color:rgba(255,255,255,.85); display:flex; align-items:center; gap:6px; }
+.yamas-wp-container .topbar .tb-contact a:hover { color:#fff; }
+.yamas-wp-container .topbar .socials { display:flex; gap:8px; }
+.yamas-wp-container .topbar .socials a { color:rgba(255,255,255,.7); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.08); transition:all .2s; }
+.yamas-wp-container .topbar .socials a:hover { background:#fff; color:var(--aegean-d); }
+
+/* HEADER */
+.yamas-wp-container header.site-header { display:flex; align-items:center; justify-content:space-between; padding:14px 40px; background:#fff; border-bottom:2px solid var(--aegean-s); position:sticky; top:0; z-index:900; box-shadow:0 2px 16px rgba(0,48,100,.06); }
+.yamas-wp-container .logo-wrap { display:flex; align-items:center; gap:16px; }
+.yamas-wp-container .logo-wrap img.yamas-header-logo { height:44px; width:auto; object-fit:contain; transition:transform .2s; }
+.yamas-wp-container .tfg-badge { display:flex; align-items:center; gap:8px; padding-left:14px; border-left:1px solid var(--bdr2); }
+.yamas-wp-container .logo-wrap img.tfg-logo { height:28px; width:auto; object-fit:contain; opacity:.85; }
+.yamas-wp-container .logo-wrap .tfg-label { font-size:9px; color:var(--txt3); letter-spacing:.4px; line-height:1.2; max-width:90px; text-transform:uppercase; font-weight:600; }
+.yamas-wp-container nav.main-nav ul { display:flex; gap:0; align-items:center; }
+.yamas-wp-container nav.main-nav a { font-family:'Inter',sans-serif; font-size:13px; letter-spacing:.8px; color:var(--txt2); padding:8px 18px; border-bottom:2px solid transparent; font-weight:600; text-transform:uppercase; display:block; transition:all .2s; }
+.yamas-wp-container nav.main-nav a.active { color:var(--aegean); border-bottom-color:var(--aegean); }
+
+/* HERO */
+.yamas-wp-container .hero { position:relative; min-height:640px; display:flex; align-items:center; overflow:hidden; }
+.yamas-wp-container .hero-bg { position:absolute; inset:0; background-image:url('Yamas/greek-island-hero.jpg'); background-size:cover; background-position:center 30%; filter:brightness(.75); }
+.yamas-wp-container .hero-bg::after { content:""; position:absolute; inset:0; background:linear-gradient(100deg,rgba(2,62,138,.82) 0%,rgba(0,119,182,.5) 55%,rgba(0,40,80,.25) 100%); }
+.yamas-wp-container .hero-inner { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:80px 40px; display:flex; align-items:center; gap:50px; flex-wrap:wrap; width:100%; }
+.yamas-wp-container .hero-text { flex:1; min-width:320px; color:#fff; }
+.yamas-wp-container .yamas-logo-hero { margin-bottom:24px; }
+.yamas-wp-container .yamas-logo-hero img { height:85px; width:auto; object-fit:contain; filter:drop-shadow(0 4px 16px rgba(0,0,0,.4)) brightness(0) invert(1); opacity:.98; }
+.yamas-wp-container .hero-text h1 { font-family:'Playfair Display',serif; font-size:46px; line-height:1.1; font-weight:700; color:#fff; margin-bottom:20px; }
+.yamas-wp-container .hero-text h1 em { font-style:italic; color:#90d5f0; }
+.yamas-wp-container .hero-sublead { font-size:17px; color:rgba(255,255,255,.88); line-height:1.65; margin-bottom:30px; max-width:560px; }
+.yamas-wp-container .hero-importer-note { font-size:12.5px; color:rgba(255,255,255,.55); font-style:italic; margin-bottom:28px; }
+.yamas-wp-container .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+.yamas-wp-container .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:var(--txt); padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid var(--sun); transition:all .25s; cursor:pointer; }
+.yamas-wp-container .btn-primary:hover { background:var(--sun-d); border-color:var(--sun-d); color:#fff; transform:translateY(-2px); box-shadow:0 8px 24px rgba(244,162,97,.3); }
+.yamas-wp-container .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.12); color:#fff; padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid rgba(255,255,255,.5); transition:all .25s; cursor:pointer; backdrop-filter:blur(4px); }
+.yamas-wp-container .hero-media { flex:1; min-width:280px; display:flex; align-items:center; justify-content:center; }
+.yamas-wp-container .hero-cans { max-height:440px; width:auto; object-fit:contain; filter:drop-shadow(0 20px 40px rgba(0,0,0,.5)); animation:floatCan 5s ease-in-out infinite; }
+@keyframes floatCan { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-18px);} }
+
+/* BRAND STRIP */
+.yamas-wp-container .brand-strip { background:var(--aegean); padding:20px 40px; text-align:center; overflow:hidden; position:relative; }
+.yamas-wp-container .brand-strip p { font-family:'Playfair Display',serif; font-size:22px; color:#fff; font-style:italic; letter-spacing:.5px; position:relative; z-index:1; margin:0; }
+.yamas-wp-container .brand-strip p span { font-style:normal; font-weight:700; color:#90d5f0; }
+
+/* CONTAINERS & SECTIONS */
+.yamas-wp-container .container { max-width:1240px; margin:0 auto; padding:0 40px; }
+.yamas-wp-container .section { padding:72px 0; }
+.yamas-wp-container .section-alt { background:var(--foam); }
+.yamas-wp-container .section h2 { font-family:'Playfair Display',serif; font-size:34px; color:var(--aegean-d); margin-bottom:16px; line-height:1.15; font-weight:700; }
+.yamas-wp-container .section h2 em { font-style:italic; color:var(--aegean); }
+.yamas-wp-container .section .section-lead { color:var(--txt2); max-width:820px; font-size:16px; line-height:1.8; margin-bottom:20px; }
+.yamas-wp-container .section-eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--aegean); display:inline-block; margin-bottom:12px; }
+
+/* ABOUT SECTION */
+.yamas-wp-container .about-layout { display:flex; gap:60px; align-items:flex-start; flex-wrap:wrap; }
+.yamas-wp-container .about-text { flex:1; min-width:300px; }
+.yamas-wp-container .about-text p { color:var(--txt2); font-size:15.5px; line-height:1.8; margin-bottom:16px; }
+.yamas-wp-container .story-callout { background:var(--aegean-s); border-left:4px solid var(--aegean); padding:20px 24px; border-radius:0 8px 8px 0; margin:24px 0 32px; }
+.yamas-wp-container .story-callout p { color:var(--txt); font-size:15px; margin:0; }
+.yamas-wp-container .key-facts { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.yamas-wp-container .kf-item { background:var(--foam); border:1px solid var(--bdr); padding:12px 18px; border-radius:6px; display:flex; align-items:center; gap:10px; flex:1 1 180px; }
+.yamas-wp-container .kf-icon { font-size:20px; }
+.yamas-wp-container .kf-label { font-size:12.5px; font-weight:700; color:var(--aegean-d); }
+.yamas-wp-container .about-ingredients { flex:0 0 380px; display:flex; flex-direction:column; gap:16px; }
+.yamas-wp-container .ingredient-card { background:#fff; border:1px solid var(--bdr); border-radius:10px; padding:24px; box-shadow:var(--shadow); display:flex; gap:16px; align-items:flex-start; transition:all .25s; }
+.yamas-wp-container .ingredient-card .ic-icon { font-size:28px; line-height:1; }
+.yamas-wp-container .ingredient-card h4 { font-family:'Playfair Display',serif; font-size:17px; color:var(--aegean-d); margin-bottom:6px; font-weight:700; }
+.yamas-wp-container .ingredient-card p { font-size:13px; color:var(--txt3); line-height:1.6; margin:0; }
+
+/* RANGE SECTION */
+.yamas-wp-container .range-card { background:#fff; border-radius:14px; border:1px solid var(--bdr); box-shadow:var(--shadow); overflow:hidden; margin-bottom:40px; }
+.yamas-wp-container .range-card-header { background:var(--aegean-d); color:#fff; padding:24px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.yamas-wp-container .range-card-header h3 { font-family:'Playfair Display',serif; font-size:22px; color:#fff; margin:0; font-weight:700; }
+.yamas-wp-container .range-split { display:flex; flex-wrap:wrap; }
+.yamas-wp-container .range-stage { flex:0 0 420px; padding:32px; background:var(--foam); border-right:1px solid var(--bdr); display:flex; flex-direction:column; align-items:center; justify-content:space-between; }
+.yamas-wp-container .stage-controls { width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.yamas-wp-container .stage-badge { font-size:12px; font-weight:700; color:var(--aegean); background:var(--aegean-s); padding:5px 12px; border-radius:20px; display:flex; align-items:center; gap:6px; }
+.yamas-wp-container .stage-badge .dot { width:7px; height:7px; border-radius:50%; background:var(--aegean); }
+.yamas-wp-container .stage-reset { background:none; border:1px solid var(--bdr2); font-size:11px; font-weight:600; color:var(--txt3); padding:4px 10px; border-radius:4px; cursor:pointer; }
+.yamas-wp-container .stage-img-wrap { min-height:300px; display:flex; align-items:center; justify-content:center; width:100%; }
+.yamas-wp-container .main-img { max-height:290px; width:auto; object-fit:contain; filter:drop-shadow(0 12px 24px rgba(0,60,120,.18)); transition:opacity .2s; }
+.yamas-wp-container .main-img.fade-out { opacity:0; }
+.yamas-wp-container .range-content { flex:1; min-width:320px; padding:32px; }
+.yamas-wp-container .flavour-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(85px,1fr)); gap:10px; margin-bottom:28px; }
+.yamas-wp-container .fp { background:var(--foam); border:2px solid var(--bdr); border-radius:8px; padding:10px 6px; text-align:center; cursor:pointer; transition:all .2s; }
+.yamas-wp-container .fp:hover { border-color:var(--aegean); background:#fff; }
+.yamas-wp-container .fp .ts { height:65px; display:flex; align-items:center; justify-content:center; margin-bottom:6px; }
+.yamas-wp-container .fp .ts img { max-height:60px; width:auto; object-fit:contain; }
+.yamas-wp-container .fp .pn { font-size:10.5px; font-weight:700; color:var(--txt); }
+.yamas-wp-container .flavour-list { display:flex; flex-direction:column; gap:8px; }
+.yamas-wp-container .flavour-list li { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:var(--foam); border:1px solid var(--bdr); border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
+.yamas-wp-container .fl-add { background:var(--aegean); color:#fff; border:none; padding:4px 12px; border-radius:4px; font-size:11.5px; font-weight:700; cursor:pointer; }
+.yamas-wp-container .fl-add.added { background:#10b981; }
+
+/* SPECS TABLE */
+.yamas-wp-container .specs-wrap { background:#fff; border-radius:12px; border:1px solid var(--bdr); padding:32px; box-shadow:var(--shadow); margin-top:40px; }
+.yamas-wp-container .specs-wrap h3 { font-family:'Playfair Display',serif; font-size:22px; color:var(--aegean-d); margin-bottom:20px; font-weight:700; }
+.yamas-wp-container .specs-table { width:100%; border-collapse:collapse; font-size:14px; }
+.yamas-wp-container .specs-table th { background:var(--aegean-s); color:var(--aegean-d); text-align:left; padding:12px 18px; font-weight:700; border-bottom:2px solid var(--bdr2); }
+.yamas-wp-container .specs-table td { padding:12px 18px; border-bottom:1px solid var(--bdr); color:var(--txt2); }
+
+/* LIFESTYLE SECTION */
+.yamas-wp-container .lifestyle-section { background:linear-gradient(135deg,var(--aegean-d) 0%,var(--aegean) 100%); color:#fff; padding:80px 0; }
+.yamas-wp-container .lifestyle-inner { display:flex; gap:60px; align-items:center; flex-wrap:wrap; }
+.yamas-wp-container .lifestyle-text { flex:1; min-width:320px; }
+.yamas-wp-container .lifestyle-text h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:18px; font-weight:700; }
+.yamas-wp-container .lifestyle-text h2 em { color:#90d5f0; font-style:italic; }
+.yamas-wp-container .serve-cards { flex:1; min-width:300px; display:flex; flex-direction:column; gap:16px; }
+.yamas-wp-container .serve-card { background:rgba(255,255,255,.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:22px 26px; }
+
+/* ENQUIRY FORM */
+.yamas-wp-container .form-section { background:var(--aegean-d); color:#fff; padding:80px 0; }
+.yamas-wp-container .form-inner { display:flex; gap:60px; align-items:flex-start; flex-wrap:wrap; }
+.yamas-wp-container .form-text { flex:1; min-width:300px; }
+.yamas-wp-container .enquiry-form { flex:1; min-width:320px; background:#fff; color:var(--txt); padding:36px; border-radius:14px; box-shadow:var(--shadow-lg); }
+.yamas-wp-container .enquiry-form h3 { font-family:'Playfair Display',serif; font-size:24px; color:var(--aegean-d); margin-bottom:20px; font-weight:700; }
+.yamas-wp-container .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.yamas-wp-container .form-group { margin-bottom:16px; }
+.yamas-wp-container .form-group label { display:block; font-size:12.5px; font-weight:700; color:var(--txt); margin-bottom:6px; }
+.yamas-wp-container .form-group input,
+.yamas-wp-container .form-group textarea { width:100%; padding:11px 14px; border:1px solid var(--bdr2); border-radius:6px; font-size:14px; font-family:'Inter',sans-serif; outline:none; }
+.yamas-wp-container .form-group textarea { height:100px; resize:vertical; }
+.yamas-wp-container .form-submit { width:100%; background:var(--sun); color:var(--txt); border:none; padding:14px; border-radius:6px; font-size:14px; font-weight:700; cursor:pointer; }
+</style>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-wrap">
+    <a href="#" aria-label="YAMAS Hellenic Iced Tea">
+      <img src="Yamas/YAMAS LOGO.png" alt="YAMAS Hellenic Iced Tea" class="yamas-header-logo">
+    </a>
+    <div class="tfg-badge">
+      <a href="https://treasuresfromgreece.co.uk/">
+        <img src="Yamas/TFGLogo.png" alt="TFG Imports" class="tfg-logo">
+        <div class="tfg-label">UK Importer<br>T.F.G. Imports</div>
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="https://treasuresfromgreece.co.uk/">Home</a></li>
+      <li><a href="https://treasuresfromgreece.co.uk/our-partners/">Our Partners</a></li>
+      <li><a href="#range" class="active">YAMAS Iced Tea</a></li>
+      <li><a href="#enquiry">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="yamas-logo-hero">
+        <img src="Yamas/YAMAS LOGO.png" alt="YAMAS Hellenic Iced Tea">
+      </div>
+      <h1>Bring a Taste of <em>Greek Summer</em> to Your Customers</h1>
+      <p class="hero-sublead">YAMAS Hellenic Iced Tea — modern flavours, natural Greek honey and vibrant Mediterranean character. Now available for wholesale supply across the UK.</p>
+      <p class="hero-importer-note">Exclusively imported and distributed in the UK by T.F.G. Imports Ltd, Edinburgh.</p>
+      <div class="hero-ctas">
+        <a href="#enquiry" class="btn-primary">Request Samples</a>
+        <a href="#enquiry" class="btn-secondary">Get Trade Prices</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img class="hero-cans" src="Yamas/Yamas cans new p.jpeg" alt="YAMAS Can Range">
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <p><span>YAMAS</span> — The Greek word for "To Our Health" &nbsp;&#9679;&nbsp; Premium Iced Tea &nbsp;&#9679;&nbsp; Made in <span>Greece</span> &nbsp;&#9679;&nbsp; Sweetened with <span>Natural Honey</span></p>
+</div>
+
+<!-- ABOUT -->
+<div class="container">
+<div class="section">
+  <div class="about-layout">
+    <div class="about-text">
+      <span class="section-eyebrow">About the Brand</span>
+      <h2>A <em>Modern</em> Greek Iced Tea</h2>
+      <p>YAMAS Hellenic Iced Tea brings together authentic Greek character, premium ingredients and contemporary fruit flavours.</p>
+      <div class="story-callout">
+        <p>T.F.G. Imports Ltd is the <strong>exclusive UK importer and distributor</strong> of YAMAS Hellenic Iced Tea.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PRODUCT RANGE -->
+<div class="section-alt" id="range">
+<div class="container">
+<div class="section">
+  <span class="section-eyebrow">The Full Range</span>
+  <h2>Two Formats. <em>Seven Flavours</em> in Cans. Eight in Bottles.</h2>
+  <div class="range-card">
+    <div class="range-card-header">
+      <h3>330ml Can Range &amp; 360ml Bottle Range</h3>
+    </div>
+    <div class="range-split" style="padding:24px;">
+      <img src="Yamas/Glass bottles .jpeg" alt="YAMAS Glass Bottles" style="max-height:280px;object-fit:contain;margin-right:20px;">
+      <img src="Yamas/New Flavours.png" alt="YAMAS New Flavours" style="max-height:280px;object-fit:contain;">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ENQUIRY FORM -->
+<section class="form-section" id="enquiry">
+  <div class="container">
+    <div class="form-inner">
+      <div class="form-text">
+        <span class="section-eyebrow" style="color:#90d5f0;">Get in Touch</span>
+        <h2>Request <em>Samples</em> or Trade Prices</h2>
+        <p>Fill in the form below and our Edinburgh team will respond within 24 hours.</p>
+      </div>
+      <div class="enquiry-form">
+        <h3>Trade Enquiry Form</h3>
+        <form id="wpTradeForm" onsubmit="submitWPForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+            <div class="form-group"><label>Company Name *</label><input type="text" name="company" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+            <div class="form-group"><label>Phone</label><input type="tel" name="phone"></div>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Details about your enquiry..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry &#8594;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.yamas-wp-container -->
+
+<script>
+// CONFIGURABLE WORDPRESS MEDIA URL
+// Change this variable if your images are hosted at a custom WordPress URL:
+const YAMAS_WP_MEDIA_URL = '/wp-content/uploads/Yamas/';
+
+function submitWPForm(e){
+  e.preventDefault();
+  const f=e.target;
+  const sub=`YAMAS Trade Enquiry (${f.company.value})`;
+  const body=`Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nPhone: ${f.phone.value}\n\nMessage:\n${f.message.value}`;
+  window.location.href='mailto:sales@treasuresfromgreece.co.uk?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+}
+</script>
