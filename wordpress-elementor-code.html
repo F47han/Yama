@@ -74,7 +74,7 @@ How to use in WordPress:
 .yamas-wp-container .hero-inner { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:80px 40px; display:flex; align-items:center; gap:50px; flex-wrap:wrap; width:100%; }
 .yamas-wp-container .hero-text { flex:1; min-width:320px; color:#fff; }
 .yamas-wp-container .yamas-logo-hero { margin-bottom:24px; }
-.yamas-wp-container .yamas-logo-hero img { height:85px; width:auto; object-fit:contain; filter:drop-shadow(0 4px 16px rgba(0,0,0,.4)) brightness(0) invert(1); opacity:.98; }
+.yamas-wp-container .yamas-logo-hero img { height:85px; width:auto; object-fit:contain; filter:brightness(0) invert(1); opacity:.98; }
 .yamas-wp-container .hero-text h1 { font-family:'Playfair Display',serif; font-size:46px; line-height:1.1; font-weight:700; color:#fff; margin-bottom:20px; }
 .yamas-wp-container .hero-text h1 em { font-style:italic; color:#90d5f0; }
 .yamas-wp-container .hero-sublead { font-size:17px; color:rgba(255,255,255,.88); line-height:1.65; margin-bottom:30px; max-width:560px; }
@@ -82,10 +82,18 @@ How to use in WordPress:
 .yamas-wp-container .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
 .yamas-wp-container .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:var(--txt); padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid var(--sun); transition:all .25s; cursor:pointer; }
 .yamas-wp-container .btn-primary:hover { background:var(--sun-d); border-color:var(--sun-d); color:#fff; transform:translateY(-2px); box-shadow:0 8px 24px rgba(244,162,97,.3); }
-.yamas-wp-container .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.12); color:#fff; padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid rgba(255,255,255,.5); transition:all .25s; cursor:pointer; backdrop-filter:blur(4px); }
+.yamas-wp-container .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.15); color:#fff; padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid rgba(255,255,255,.7); transition:all .25s; cursor:pointer; }
+.yamas-wp-container .btn-secondary:hover { background:rgba(255,255,255,.3); border-color:#fff; transform:translateY(-2px); }
 .yamas-wp-container .hero-media { flex:1; min-width:280px; display:flex; align-items:center; justify-content:center; }
-.yamas-wp-container .hero-cans { max-height:440px; width:auto; object-fit:contain; filter:drop-shadow(0 20px 40px rgba(0,0,0,.5)); animation:floatCan 5s ease-in-out infinite; }
-@keyframes floatCan { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-18px);} }
+.yamas-wp-container .hero-can-stack { position:relative; width:100%; max-width:440px; height:400px; display:flex; align-items:center; justify-content:center; }
+.yamas-wp-container .can-stack-item { position:absolute; max-height:340px; width:auto; object-fit:contain; filter:drop-shadow(0 15px 30px rgba(0,0,0,.35)); transition:all .4s ease; }
+.yamas-wp-container .can-stack-item:hover { transform:translateY(-10px) scale(1.08) !important; z-index:10 !important; }
+.yamas-wp-container .can-1 { transform:translateX(-100px) scale(.85) rotate(-6deg); z-index:1; }
+.yamas-wp-container .can-2 { transform:translateX(-50px) scale(.95) rotate(-3deg); z-index:2; }
+.yamas-wp-container .can-3 { transform:translateX(0) scale(1.06); z-index:3; animation:floatCan 5s ease-in-out infinite; }
+.yamas-wp-container .can-4 { transform:translateX(50px) scale(.95) rotate(3deg); z-index:2; }
+.yamas-wp-container .can-5 { transform:translateX(100px) scale(.85) rotate(6deg); z-index:1; }
+@keyframes floatCan { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
 
 /* BRAND STRIP */
 .yamas-wp-container .brand-strip { background:var(--aegean); padding:20px 40px; text-align:center; overflow:hidden; position:relative; }
@@ -213,7 +221,13 @@ How to use in WordPress:
       </div>
     </div>
     <div class="hero-media">
-      <img class="hero-cans" src="Yamas/Yamas cans new p.jpeg" alt="YAMAS Can Range">
+      <div class="hero-can-stack">
+        <img src="Yamas/yamas can peach.png" alt="YAMAS Peach" class="can-stack-item can-1">
+        <img src="Yamas/yamas can lemon.png" alt="YAMAS Lemon" class="can-stack-item can-2">
+        <img src="Yamas/yamas can pomegranate.png" alt="YAMAS Pomegranate" class="can-stack-item can-3">
+        <img src="Yamas/Grapefruit can.png" alt="YAMAS Grapefruit" class="can-stack-item can-4">
+        <img src="Yamas/Matcha can.png" alt="YAMAS Matcha" class="can-stack-item can-5">
+      </div>
     </div>
   </div>
 </section>

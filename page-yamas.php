@@ -99,7 +99,7 @@ get_header();
 .yamas-wp-wrapper .hero-inner { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:80px 40px; display:flex; align-items:center; gap:50px; flex-wrap:wrap; width:100%; }
 .yamas-wp-wrapper .hero-text { flex:1; min-width:320px; color:#fff; }
 .yamas-wp-wrapper .yamas-logo-hero { margin-bottom:24px; }
-.yamas-wp-wrapper .yamas-logo-hero img { height:85px; width:auto; object-fit:contain; filter:drop-shadow(0 4px 16px rgba(0,0,0,.4)) brightness(0) invert(1); opacity:.98; }
+.yamas-wp-wrapper .yamas-logo-hero img { height:85px; width:auto; object-fit:contain; filter:brightness(0) invert(1); opacity:.98; }
 .yamas-wp-wrapper .hero-text h1 { font-family:'Playfair Display',serif; font-size:46px; line-height:1.1; font-weight:700; color:#fff; margin-bottom:20px; }
 .yamas-wp-wrapper .hero-text h1 em { font-style:italic; color:#90d5f0; }
 .yamas-wp-wrapper .hero-sublead { font-size:17px; color:rgba(255,255,255,.88); line-height:1.65; margin-bottom:30px; max-width:560px; }
@@ -107,11 +107,18 @@ get_header();
 .yamas-wp-wrapper .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
 .yamas-wp-wrapper .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:var(--txt); padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid var(--sun); transition:all .25s; cursor:pointer; }
 .yamas-wp-wrapper .btn-primary:hover { background:var(--sun-d); border-color:var(--sun-d); color:#fff; transform:translateY(-2px); box-shadow:0 8px 24px rgba(244,162,97,.3); }
-.yamas-wp-wrapper .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.12); color:#fff; padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid rgba(255,255,255,.5); transition:all .25s; cursor:pointer; backdrop-filter:blur(4px); }
-.yamas-wp-wrapper .btn-secondary:hover { background:rgba(255,255,255,.25); border-color:#fff; transform:translateY(-2px); }
+.yamas-wp-wrapper .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.15); color:#fff; padding:14px 30px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:.5px; border:2px solid rgba(255,255,255,.7); transition:all .25s; cursor:pointer; }
+.yamas-wp-wrapper .btn-secondary:hover { background:rgba(255,255,255,.3); border-color:#fff; transform:translateY(-2px); }
 .yamas-wp-wrapper .hero-media { flex:1; min-width:280px; display:flex; align-items:center; justify-content:center; }
-.yamas-wp-wrapper .hero-cans { max-height:440px; width:auto; object-fit:contain; filter:drop-shadow(0 20px 40px rgba(0,0,0,.5)); animation:floatCan 5s ease-in-out infinite; }
-@keyframes floatCan { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-18px);} }
+.yamas-wp-wrapper .hero-can-stack { position:relative; width:100%; max-width:440px; height:400px; display:flex; align-items:center; justify-content:center; }
+.yamas-wp-wrapper .can-stack-item { position:absolute; max-height:340px; width:auto; object-fit:contain; filter:drop-shadow(0 15px 30px rgba(0,0,0,.35)); transition:all .4s ease; }
+.yamas-wp-wrapper .can-stack-item:hover { transform:translateY(-10px) scale(1.08) !important; z-index:10 !important; }
+.yamas-wp-wrapper .can-1 { transform:translateX(-100px) scale(.85) rotate(-6deg); z-index:1; }
+.yamas-wp-wrapper .can-2 { transform:translateX(-50px) scale(.95) rotate(-3deg); z-index:2; }
+.yamas-wp-wrapper .can-3 { transform:translateX(0) scale(1.06); z-index:3; animation:floatCan 5s ease-in-out infinite; }
+.yamas-wp-wrapper .can-4 { transform:translateX(50px) scale(.95) rotate(3deg); z-index:2; }
+.yamas-wp-wrapper .can-5 { transform:translateX(100px) scale(.85) rotate(6deg); z-index:1; }
+@keyframes floatCan { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
 
 /* BRAND STRIP */
 .yamas-wp-wrapper .brand-strip { background:var(--aegean); padding:20px 40px; text-align:center; overflow:hidden; position:relative; }
@@ -364,7 +371,13 @@ get_header();
       </div>
     </div>
     <div class="hero-media">
-      <img class="hero-cans" src="<?php echo $yamas_img_base; ?>Yamas cans new p.jpeg" alt="YAMAS Hellenic Iced Tea Can Range" onerror="imgFallbackWP(this)">
+      <div class="hero-can-stack">
+        <img src="<?php echo $yamas_img_base; ?>yamas can peach.png" alt="YAMAS Peach" class="can-stack-item can-1" onerror="imgFallbackWP(this)">
+        <img src="<?php echo $yamas_img_base; ?>yamas can lemon.png" alt="YAMAS Lemon" class="can-stack-item can-2" onerror="imgFallbackWP(this)">
+        <img src="<?php echo $yamas_img_base; ?>yamas can pomegranate.png" alt="YAMAS Pomegranate" class="can-stack-item can-3" onerror="imgFallbackWP(this)">
+        <img src="<?php echo $yamas_img_base; ?>Grapefruit can.png" alt="YAMAS Grapefruit" class="can-stack-item can-4" onerror="imgFallbackWP(this)">
+        <img src="<?php echo $yamas_img_base; ?>Matcha can.png" alt="YAMAS Matcha" class="can-stack-item can-5" onerror="imgFallbackWP(this)">
+      </div>
     </div>
   </div>
 </section>
