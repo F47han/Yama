@@ -99,7 +99,7 @@ get_header();
 .yamas-wp-wrapper .hero-inner { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:80px 40px; display:flex; align-items:center; gap:50px; flex-wrap:wrap; width:100%; }
 .yamas-wp-wrapper .hero-text { flex:1; min-width:320px; color:#fff; }
 .yamas-wp-wrapper .yamas-logo-hero { margin-bottom:24px; }
-.yamas-wp-wrapper .yamas-logo-hero img { height:85px; width:auto; object-fit:contain; filter:brightness(0) invert(1); opacity:.98; }
+.yamas-wp-wrapper .yamas-logo-hero img { height:80px; width:auto; object-fit:contain; filter:drop-shadow(0 2px 10px rgba(0,0,0,.35)); }
 .yamas-wp-wrapper .hero-text h1 { font-family:'Playfair Display',serif; font-size:46px; line-height:1.1; font-weight:700; color:#fff; margin-bottom:20px; }
 .yamas-wp-wrapper .hero-text h1 em { font-style:italic; color:#90d5f0; }
 .yamas-wp-wrapper .hero-sublead { font-size:17px; color:rgba(255,255,255,.88); line-height:1.65; margin-bottom:30px; max-width:560px; }
