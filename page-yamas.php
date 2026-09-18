@@ -576,7 +576,7 @@ get_header();
         <tr><td><strong>Packaging</strong></td><td>Aluminium Can (100% Recyclable)</td><td>Embossed Flint Glass Bottle</td></tr>
         <tr><td><strong>Case Pack</strong></td><td>24 cans per case</td><td>12 bottles per case</td></tr>
         <tr><td><strong>Shelf Life</strong></td><td>12 months from manufacture</td><td>12 months from manufacture</td></tr>
-        <tr><td><strong>Sweetener</strong></td><td>Natural Greek Honey + Sugar</td><td>Natural Greek Honey + Sugar</td></tr>
+        <tr><td><strong>Sweetener</strong></td><td>100% Natural Greek Honey (No Added Sugar)</td><td>100% Natural Greek Honey (No Added Sugar)</td></tr>
         <tr><td><strong>Storage</strong></td><td>Ambient; serve chilled 4–6&#176;C</td><td>Ambient; serve chilled 4–6&#176;C</td></tr>
         <tr><td><strong>Country of Origin</strong></td><td>Produced in Greece</td><td>Produced in Greece</td></tr>
         <tr><td><strong>UK Importer</strong></td><td>T.F.G. Imports Ltd, Edinburgh</td><td>T.F.G. Imports Ltd, Edinburgh</td></tr>
