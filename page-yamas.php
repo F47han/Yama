@@ -523,7 +523,7 @@ get_header();
             <button class="stage-reset" onclick="resetRangeWP('bottle')">&#8634; View All</button>
           </div>
           <div class="stage-img-wrap">
-            <img id="bottle-main-wp" class="main-img" src="<?php echo $yamas_img_base; ?>Glass bottles .jpeg" alt="YAMAS 360ml Bottle Range" onerror="imgFallbackWP(this)">
+            <img id="bottle-main-wp" class="main-img" src="<?php echo $yamas_img_base; ?>official_all_six_tastes.jpg" alt="YAMAS Official Bottle Range" onerror="imgFallbackWP(this)">
           </div>
           <div class="stage-hint">Click any flavour to change photo</div>
         </div>
@@ -532,25 +532,25 @@ get_header();
           <div class="pack-badge">Cases of 12 bottles &nbsp;&#183;&nbsp; 12-month shelf life</div>
           <div class="flavour-label"><span>Select a Flavour:</span><span class="tip">Click pill to view &bull; + Add for sample request</span></div>
           <div class="flavour-gallery" id="bottle-gallery-wp">
-            <div class="fp" data-range="bottle" data-id="b-lemon" data-img="<?php echo $yamas_img_base; ?>Green tea lemon &amp; honey.png" data-name="Lemon &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>Green tea lemon &amp; honey.png" alt="Lemon" onerror="imgFallbackWP(this)"></div><div class="pn">Lemon &amp; Honey</div></div>
-            <div class="fp" data-range="bottle" data-id="b-peach" data-img="<?php echo $yamas_img_base; ?>BLACK TEA WITH PEACH &amp; HONEY.png" data-name="Peach &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>BLACK TEA WITH PEACH &amp; HONEY.png" alt="Peach" onerror="imgFallbackWP(this)"></div><div class="pn">Peach &amp; Honey</div></div>
-            <div class="fp" data-range="bottle" data-id="b-pom" data-img="<?php echo $yamas_img_base; ?>WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" data-name="Pomegranate &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" alt="Pomegranate" onerror="imgFallbackWP(this)"></div><div class="pn">Pomegranate</div></div>
-            <div class="fp" data-range="bottle" data-id="b-mango" data-img="<?php echo $yamas_img_base; ?>GREEN TEA WITH MANGO &amp; HONEY.png" data-name="Mango &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>GREEN TEA WITH MANGO &amp; HONEY.png" alt="Mango" onerror="imgFallbackWP(this)"></div><div class="pn">Mango &amp; Honey</div></div>
-            <div class="fp" data-range="bottle" data-id="b-blue" data-img="<?php echo $yamas_img_base; ?>GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>GREEN TEA WITH BLUEBERRIES.png" alt="Blueberry" onerror="imgFallbackWP(this)"></div><div class="pn">Blueberry</div></div>
+            <div class="fp" data-range="bottle" data-id="b-lemon" data-img="<?php echo $yamas_img_base; ?>official_lemon_bottle.png" data-name="Lemon &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_lemon_bottle.png" alt="Lemon" onerror="imgFallbackWP(this)"></div><div class="pn">Lemon &amp; Honey</div></div>
+            <div class="fp" data-range="bottle" data-id="b-peach" data-img="<?php echo $yamas_img_base; ?>official_peach_bottle.png" data-name="Peach &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_peach_bottle.png" alt="Peach" onerror="imgFallbackWP(this)"></div><div class="pn">Peach &amp; Honey</div></div>
+            <div class="fp" data-range="bottle" data-id="b-pom" data-img="<?php echo $yamas_img_base; ?>official_pomegranate_bottle.png" data-name="Pomegranate &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_pomegranate_bottle.png" alt="Pomegranate" onerror="imgFallbackWP(this)"></div><div class="pn">Pomegranate</div></div>
+            <div class="fp" data-range="bottle" data-id="b-mango" data-img="<?php echo $yamas_img_base; ?>official_mango_bottle.png" data-name="Mango &amp; Honey 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_mango_bottle.png" alt="Mango" onerror="imgFallbackWP(this)"></div><div class="pn">Mango &amp; Honey</div></div>
+            <div class="fp" data-range="bottle" data-id="b-blue" data-img="<?php echo $yamas_img_base; ?>official_blueberry_bottle.png" data-name="Blueberry 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_blueberry_bottle.png" alt="Blueberry" onerror="imgFallbackWP(this)"></div><div class="pn">Blueberry</div></div>
+            <div class="fp" data-range="bottle" data-id="b-cannabis" data-img="<?php echo $yamas_img_base; ?>official_cannabis_bottle.png" data-name="Cannabis 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_cannabis_bottle.png" alt="Cannabis" onerror="imgFallbackWP(this)"></div><div class="pn">Cannabis</div></div>
+            <div class="fp" data-range="bottle" data-id="b-camomile" data-img="<?php echo $yamas_img_base; ?>official_camomile_bottle.png" data-name="Camomile 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>official_camomile_bottle.png" alt="Camomile" onerror="imgFallbackWP(this)"></div><div class="pn">Camomile</div></div>
             <div class="fp" data-range="bottle" data-id="b-grape" data-img="<?php echo $yamas_img_base; ?>White tea and grapefruit.jpeg" data-name="Pink Grapefruit 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>White tea and grapefruit.jpeg" alt="Grapefruit" onerror="imgFallbackWP(this)"></div><div class="pn">Grapefruit</div></div>
-            <div class="fp" data-range="bottle" data-id="b-matcha" data-img="<?php echo $yamas_img_base; ?>Matcha green tea W.jpeg.png" data-name="Matcha 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>Matcha green tea W.jpeg.png" alt="Matcha" onerror="imgFallbackWP(this)"></div><div class="pn">Matcha</div></div>
-            <div class="fp" data-range="bottle" data-id="b-cannabis" data-img="<?php echo $yamas_img_base; ?>yamas can canabis .jpg" data-name="Cannabis 360ml Bottle"><div class="ts"><img src="<?php echo $yamas_img_base; ?>yamas can canabis .jpg" alt="Cannabis" onerror="imgFallbackWP(this)"></div><div class="pn">Cannabis</div></div>
           </div>
           <span class="fl-title">All 360ml Bottle Flavours:</span>
           <ul class="flavour-list" id="bottle-list-wp">
-            <li data-range="bottle" data-id="b-lemon" data-img="<?php echo $yamas_img_base; ?>Green tea lemon &amp; honey.png" data-name="Lemon &amp; Honey 360ml Bottle"><span class="fl-name">Green Tea with Lemon &amp; Honey</span><button class="fl-add" data-id="b-lemon" data-name="Lemon &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
-            <li data-range="bottle" data-id="b-peach" data-img="<?php echo $yamas_img_base; ?>BLACK TEA WITH PEACH &amp; HONEY.png" data-name="Peach &amp; Honey 360ml Bottle"><span class="fl-name">Black Tea with Peach &amp; Honey</span><button class="fl-add" data-id="b-peach" data-name="Peach &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
-            <li data-range="bottle" data-id="b-pom" data-img="<?php echo $yamas_img_base; ?>WHITE TEA WITH  POMEGRANATE &amp; HONEY.png" data-name="Pomegranate &amp; Honey 360ml Bottle"><span class="fl-name">White Tea with Pomegranate &amp; Honey</span><button class="fl-add" data-id="b-pom" data-name="Pomegranate &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
-            <li data-range="bottle" data-id="b-mango" data-img="<?php echo $yamas_img_base; ?>GREEN TEA WITH MANGO &amp; HONEY.png" data-name="Mango &amp; Honey 360ml Bottle"><span class="fl-name">Green Tea with Mango &amp; Honey</span><button class="fl-add" data-id="b-mango" data-name="Mango &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
-            <li data-range="bottle" data-id="b-blue" data-img="<?php echo $yamas_img_base; ?>GREEN TEA WITH BLUEBERRIES.png" data-name="Blueberry 360ml Bottle"><span class="fl-name">Green Tea with Blueberry</span><button class="fl-add" data-id="b-blue" data-name="Blueberry 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-lemon" data-img="<?php echo $yamas_img_base; ?>official_lemon_bottle.png" data-name="Lemon &amp; Honey 360ml Bottle"><span class="fl-name">Green Tea with Lemon &amp; Pure Greek Honey</span><button class="fl-add" data-id="b-lemon" data-name="Lemon &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-peach" data-img="<?php echo $yamas_img_base; ?>official_peach_bottle.png" data-name="Peach &amp; Honey 360ml Bottle"><span class="fl-name">Black Tea with Peach &amp; Pure Greek Honey</span><button class="fl-add" data-id="b-peach" data-name="Peach &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-pom" data-img="<?php echo $yamas_img_base; ?>official_pomegranate_bottle.png" data-name="Pomegranate &amp; Honey 360ml Bottle"><span class="fl-name">White Tea with Pomegranate &amp; Pure Greek Honey</span><button class="fl-add" data-id="b-pom" data-name="Pomegranate &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-mango" data-img="<?php echo $yamas_img_base; ?>official_mango_bottle.png" data-name="Mango &amp; Honey 360ml Bottle"><span class="fl-name">Green Tea with Mango &amp; Pure Greek Honey</span><button class="fl-add" data-id="b-mango" data-name="Mango &amp; Honey 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-blue" data-img="<?php echo $yamas_img_base; ?>official_blueberry_bottle.png" data-name="Blueberry 360ml Bottle"><span class="fl-name">Green Tea with Blueberry &amp; Pure Greek Honey</span><button class="fl-add" data-id="b-blue" data-name="Blueberry 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-cannabis" data-img="<?php echo $yamas_img_base; ?>official_cannabis_bottle.png" data-name="Cannabis 360ml Bottle"><span class="fl-name">Green Tea with Cannabis &amp; Pure Greek Honey</span><button class="fl-add" data-id="b-cannabis" data-name="Cannabis 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
+            <li data-range="bottle" data-id="b-camomile" data-img="<?php echo $yamas_img_base; ?>official_camomile_bottle.png" data-name="Camomile 360ml Bottle"><span class="fl-name">Herbal Camomile with Pure Greek Honey</span><button class="fl-add" data-id="b-camomile" data-name="Camomile 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
             <li data-range="bottle" data-id="b-grape" data-img="<?php echo $yamas_img_base; ?>White tea and grapefruit.jpeg" data-name="Pink Grapefruit 360ml Bottle"><span class="fl-name">White Tea with Pink Grapefruit</span><button class="fl-add" data-id="b-grape" data-name="Pink Grapefruit 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
-            <li data-range="bottle" data-id="b-matcha" data-img="<?php echo $yamas_img_base; ?>Matcha green tea W.jpeg.png" data-name="Matcha 360ml Bottle"><span class="fl-name">Green Tea with Matcha</span><button class="fl-add" data-id="b-matcha" data-name="Matcha 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
-            <li data-range="bottle" data-id="b-cannabis" data-img="<?php echo $yamas_img_base; ?>yamas can canabis .jpg" data-name="Cannabis 360ml Bottle"><span class="fl-name">Green Tea with Cannabis</span><button class="fl-add" data-id="b-cannabis" data-name="Cannabis 360ml Bottle" data-range="360ml Bottle">+ Add</button></li>
           </ul>
         </div>
       </div>
@@ -560,10 +560,10 @@ get_header();
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;">
     <div style="border-radius:12px;overflow:hidden;border:1px solid var(--bdr);box-shadow:var(--shadow);">
-      <img src="<?php echo $yamas_img_base; ?>Glass bottles .jpeg" alt="YAMAS 360ml Glass Bottle Range" style="width:100%;height:260px;object-fit:cover;" onerror="imgFallbackWP(this)">
+      <img src="<?php echo $yamas_img_base; ?>official_all_six_tastes.jpg" alt="Official YAMAS Greek Lineup" style="width:100%;height:280px;object-fit:cover;" onerror="imgFallbackWP(this)">
     </div>
     <div style="border-radius:12px;overflow:hidden;border:1px solid var(--bdr);box-shadow:var(--shadow);">
-      <img src="<?php echo $yamas_img_base; ?>New Flavours.png" alt="YAMAS New Flavours" style="width:100%;height:260px;object-fit:cover;object-position:top;" onerror="imgFallbackWP(this)">
+      <img src="<?php echo $yamas_img_base; ?>official_cannabis_honey.jpg" alt="Official YAMAS Campaign Photo" style="width:100%;height:280px;object-fit:cover;object-position:center;" onerror="imgFallbackWP(this)">
     </div>
   </div>
 
@@ -736,7 +736,7 @@ if(vOverlayWP && vidWP){
 }
 
 // FLAVOUR VIEWER
-const defaultsWP={can:{img:'<?php echo $yamas_img_base; ?>Yamas cans new p.jpeg',name:'All 7 Cans'},bottle:{img:'<?php echo $yamas_img_base; ?>Glass bottles .jpeg',name:'All 8 Bottles'}};
+const defaultsWP={can:{img:'<?php echo $yamas_img_base; ?>Yamas cans new p.jpeg',name:'All 7 Cans'},bottle:{img:'<?php echo $yamas_img_base; ?>official_all_six_tastes.jpg',name:'All 8 Bottles'}};
 function selectFlavourWP(range,id,src,name){
   const m=document.getElementById(range==='can'?'can-main-wp':'bottle-main-wp');
   const bt=document.getElementById(range+'-badge-text-wp');
