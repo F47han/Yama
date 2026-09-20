@@ -184,6 +184,9 @@ get_header();
 .yamas-wp-wrapper .main-img { max-height:290px; width:auto; object-fit:contain; filter:drop-shadow(0 12px 24px rgba(0,60,120,.18)); transition:opacity .2s,transform .2s; }
 .yamas-wp-wrapper .main-img.fade-out { opacity:0; transform:scale(.96); }
 .yamas-wp-wrapper .stage-hint { font-size:11px; color:var(--txt3); margin-top:12px; font-style:italic; }
+.yamas-wp-wrapper .stage-drink-desc { width:100%; background:#f4fafd; border:1px solid var(--bdr2); border-radius:8px; padding:10px 14px; margin-top:10px; text-align:left; transition:all .2s; }
+.yamas-wp-wrapper .stage-drink-desc .desc-title { display:block; font-size:13px; font-weight:700; color:var(--p-navy); margin-bottom:4px; }
+.yamas-wp-wrapper .stage-drink-desc .desc-text { font-size:12.5px; line-height:1.5; color:var(--txt2); margin:0; }
 .yamas-wp-wrapper .range-content { flex:1; min-width:320px; padding:32px; }
 .yamas-wp-wrapper .range-desc { color:var(--txt2); font-size:14.5px; margin-bottom:20px; }
 .yamas-wp-wrapper .pack-badge { display:inline-block; background:var(--aegean-s); color:var(--aegean-d); font-size:12px; font-weight:700; padding:6px 14px; border-radius:4px; margin-bottom:24px; border:1px solid var(--bdr2); }
@@ -481,6 +484,10 @@ get_header();
           <div class="stage-img-wrap">
             <img id="can-main-wp" class="main-img" src="<?php echo $yamas_img_base; ?>Yamas cans new p.jpeg" alt="YAMAS 330ml Can Range" onerror="imgFallbackWP(this)">
           </div>
+          <div class="stage-drink-desc" id="can-stage-desc-wp">
+            <span class="desc-title" id="can-desc-title-wp">YAMAS Hellenic Iced Tea Range</span>
+            <p class="desc-text" id="can-desc-text-wp">Select any drink below to view its official Greek recipe description &amp; ingredients.</p>
+          </div>
           <div class="stage-hint">Click any flavour to change photo</div>
         </div>
         <div class="range-content">
@@ -524,6 +531,10 @@ get_header();
           </div>
           <div class="stage-img-wrap">
             <img id="bottle-main-wp" class="main-img" src="<?php echo $yamas_img_base; ?>official_all_six_tastes.jpg" alt="YAMAS Official Bottle Range" onerror="imgFallbackWP(this)">
+          </div>
+          <div class="stage-drink-desc" id="bottle-stage-desc-wp">
+            <span class="desc-title" id="bottle-desc-title-wp">YAMAS Hellenic Iced Tea Range</span>
+            <p class="desc-text" id="bottle-desc-text-wp">Select any drink below to view its official Greek recipe description &amp; ingredients.</p>
           </div>
           <div class="stage-hint">Click any flavour to change photo</div>
         </div>
@@ -737,18 +748,47 @@ if(vOverlayWP && vidWP){
 
 // FLAVOUR VIEWER
 const defaultsWP={can:{img:'<?php echo $yamas_img_base; ?>Yamas cans new p.jpeg',name:'All 7 Cans'},bottle:{img:'<?php echo $yamas_img_base; ?>official_all_six_tastes.jpg',name:'All 8 Bottles'}};
+const drinkDescriptionsWP={
+  'c-lemon':{title:'Green Tea with Lemon & Pure Greek Honey',desc:'The most popular tea in the world comes from Asia and is known for its strong antioxidants and rich catechins. Combined with a high percentage of natural lemon juice and natural Greek honey — top quality without added sugar.'},
+  'b-lemon':{title:'Green Tea with Lemon & Pure Greek Honey',desc:'The most popular tea in the world comes from Asia and is known for its strong antioxidants and rich catechins. Combined with a high percentage of natural lemon juice and natural Greek honey — top quality without added sugar.'},
+  'c-peach':{title:'Black Tea with Peach & Pure Greek Honey',desc:'Black "healing" tea, known worldwide for its high content of polyphenols — one of the most important antioxidants. Enriched with natural peach juice and pure Greek honey for daily refreshing pleasure.'},
+  'b-peach':{title:'Black Tea with Peach & Pure Greek Honey',desc:'Black "healing" tea, known worldwide for its high content of polyphenols — one of the most important antioxidants. Enriched with natural peach juice and pure Greek honey for daily refreshing pleasure.'},
+  'c-pom':{title:'White Tea with Pomegranate & Pure Greek Honey',desc:'White tea holds the highest content of antioxidants and nutrients among tea varieties. Combined with natural pomegranate superfood juice and pure Greek honey, offering a mature, full taste.'},
+  'b-pom':{title:'White Tea with Pomegranate & Pure Greek Honey',desc:'White tea holds the highest content of antioxidants and nutrients among tea varieties. Combined with natural pomegranate superfood juice and pure Greek honey, offering a mature, full taste.'},
+  'b-mango':{title:'Green Tea with Mango & Pure Greek Honey',desc:'Oriental recipe in green iced tea preserving natural catechins, combined with exotic mango fruit juice and 100% natural Greek honey.'},
+  'c-blue':{title:'Green Tea with Blueberry & Pure Greek Honey',desc:'Antioxidant-rich green tea infused with natural blueberry juice and pure Greek honey for a delightfully fruity Mediterranean taste.'},
+  'b-blue':{title:'Green Tea with Blueberry & Pure Greek Honey',desc:'Antioxidant-rich green tea infused with natural blueberry juice and pure Greek honey for a delightfully fruity Mediterranean taste.'},
+  'c-cannabis':{title:'Green Tea with Cannabis & Pure Greek Honey',desc:'YAMAS Cannabis Ice Tea combining premium green tea with natural cannabis (hemp extract) and pure Greek honey. Uniquely refreshing.'},
+  'b-cannabis':{title:'Green Tea with Cannabis & Pure Greek Honey',desc:'YAMAS Cannabis Ice Tea combining premium green tea with natural cannabis (hemp extract) and pure Greek honey. Uniquely refreshing.'},
+  'b-camomile':{title:'Herbal Camomile with Pure Honey & Thyme',desc:'YAMAS Chamomile infusion crafted with natural chamomile flowers, pure Greek honey, and a delicate touch of fresh Greek thyme.'},
+  'c-grape':{title:'White Tea with Pink Grapefruit & Pure Greek Honey',desc:'Rare white tea paired with crisp pink grapefruit juice and natural Greek honey — a refreshing bittersweet citrus spritz.'},
+  'b-grape':{title:'White Tea with Pink Grapefruit & Pure Greek Honey',desc:'Rare white tea paired with crisp pink grapefruit juice and natural Greek honey — a refreshing bittersweet citrus spritz.'},
+  'c-matcha':{title:'Green Tea with Matcha & Yuzu',desc:'Japanese-inspired green tea infused with vibrant ceremonial Matcha and citrusy Yuzu fruit, sweetened naturally with Greek honey.'}
+};
+
 function selectFlavourWP(range,id,src,name){
   const m=document.getElementById(range==='can'?'can-main-wp':'bottle-main-wp');
   const bt=document.getElementById(range+'-badge-text-wp');
+  const dTitle=document.getElementById(range+'-desc-title-wp');
+  const dText=document.getElementById(range+'-desc-text-wp');
   m.classList.add('fade-out');
   setTimeout(()=>{ m.src=src; m.alt=name; if(bt)bt.textContent=name; m.classList.remove('fade-out'); },160);
+  const info=drinkDescriptionsWP[id];
+  if(info){
+    if(dTitle)dTitle.textContent=info.title;
+    if(dText)dText.textContent=info.desc;
+  }
 }
 function resetRangeWP(range){
   const d=defaultsWP[range];
   const m=document.getElementById(range==='can'?'can-main-wp':'bottle-main-wp');
   const bt=document.getElementById(range+'-badge-text-wp');
+  const dTitle=document.getElementById(range+'-desc-title-wp');
+  const dText=document.getElementById(range+'-desc-text-wp');
   m.classList.add('fade-out');
   setTimeout(()=>{ m.src=d.img; m.alt='YAMAS '+d.name; if(bt)bt.textContent='Showing: '+d.name; m.classList.remove('fade-out'); },160);
+  if(dTitle)dTitle.textContent='YAMAS Hellenic Iced Tea Range';
+  if(dText)dText.textContent='Select any drink below to view its official Greek recipe description & ingredients.';
 }
 
 // SAMPLE BASKET

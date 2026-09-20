@@ -165,6 +165,9 @@ nav.main-nav a:hover{color:var(--aegean);border-bottom-color:var(--aegean-l);}
 .main-img{max-height:300px;max-width:100%;width:auto;object-fit:contain;transition:opacity .22s,transform .25s;filter:drop-shadow(0 12px 22px rgba(0,119,182,.16));}
 .main-img.fade-out{opacity:.08;transform:scale(.94);}
 .stage-hint{font-size:12px;color:var(--txt3);text-align:center;margin-top:10px;font-style:italic;}
+.stage-drink-desc{width:100%;background:#f4fafd;border:1px solid var(--bdr2);border-radius:8px;padding:10px 14px;margin-top:10px;text-align:left;transition:all .2s;}
+.stage-drink-desc .desc-title{display:block;font-size:13px;font-weight:700;color:var(--p-navy);margin-bottom:4px;}
+.stage-drink-desc .desc-text{font-size:12.5px;line-height:1.5;color:var(--txt2);margin:0;}
 .range-content{flex:1;min-width:300px;padding:28px 32px;display:flex;flex-direction:column;}
 .range-desc{font-size:15px;color:var(--txt2);line-height:1.75;margin-bottom:16px;}
 .pack-badge{background:var(--aegean-s);border-left:3px solid var(--aegean);color:var(--aegean-d);font-weight:700;font-size:14px;padding:10px 16px;border-radius:0 6px 6px 0;margin-bottom:20px;display:inline-block;}
@@ -539,6 +542,10 @@ footer{background:var(--txt);color:rgba(255,255,255,.6);padding:44px 40px 28px;}
           <div class="stage-img-wrap">
             <img id="can-main" class="main-img" src="Yamas/Yamas cans new p.jpeg" alt="YAMAS 330ml Can Range" onerror="imgFallback(this)">
           </div>
+          <div class="stage-drink-desc" id="can-stage-desc">
+            <span class="desc-title" id="can-desc-title">YAMAS Hellenic Iced Tea Range</span>
+            <p class="desc-text" id="can-desc-text">Select any drink below to view its official Greek recipe description &amp; ingredients.</p>
+          </div>
           <div class="stage-hint">Click any flavour to change photo</div>
         </div>
         <div class="range-content">
@@ -584,6 +591,10 @@ footer{background:var(--txt);color:rgba(255,255,255,.6);padding:44px 40px 28px;}
           </div>
           <div class="stage-img-wrap">
             <img id="bottle-main" class="main-img" src="Yamas/official_all_six_tastes.jpg" alt="YAMAS Official Bottle Range" onerror="imgFallback(this)">
+          </div>
+          <div class="stage-drink-desc" id="bottle-stage-desc">
+            <span class="desc-title" id="bottle-desc-title">YAMAS Hellenic Iced Tea Range</span>
+            <p class="desc-text" id="bottle-desc-text">Select any drink below to view its official Greek recipe description &amp; ingredients.</p>
           </div>
           <div class="stage-hint">Click any flavour to change photo</div>
         </div>
@@ -842,20 +853,54 @@ if(vOverlay&&vid){
 
 // ===== FLAVOUR VIEWER =====
 const defaults={can:{img:'Yamas/Yamas cans new p.jpeg',name:'All 7 Cans'},bottle:{img:'Yamas/official_all_six_tastes.jpg',name:'All 8 Bottles'}};
+const drinkDescriptions={
+  'c-lemon':{title:'Green Tea with Lemon & Pure Greek Honey',desc:'The most popular tea in the world comes from Asia and is known for its strong antioxidants and rich catechins. Combined with a high percentage of natural lemon juice and natural Greek honey — top quality without added sugar.'},
+  'b-lemon':{title:'Green Tea with Lemon & Pure Greek Honey',desc:'The most popular tea in the world comes from Asia and is known for its strong antioxidants and rich catechins. Combined with a high percentage of natural lemon juice and natural Greek honey — top quality without added sugar.'},
+  'c-peach':{title:'Black Tea with Peach & Pure Greek Honey',desc:'Black "healing" tea, known worldwide for its high content of polyphenols — one of the most important antioxidants. Enriched with natural peach juice and pure Greek honey for daily refreshing pleasure.'},
+  'b-peach':{title:'Black Tea with Peach & Pure Greek Honey',desc:'Black "healing" tea, known worldwide for its high content of polyphenols — one of the most important antioxidants. Enriched with natural peach juice and pure Greek honey for daily refreshing pleasure.'},
+  'c-pom':{title:'White Tea with Pomegranate & Pure Greek Honey',desc:'White tea holds the highest content of antioxidants and nutrients among tea varieties. Combined with natural pomegranate superfood juice and pure Greek honey, offering a mature, full taste.'},
+  'b-pom':{title:'White Tea with Pomegranate & Pure Greek Honey',desc:'White tea holds the highest content of antioxidants and nutrients among tea varieties. Combined with natural pomegranate superfood juice and pure Greek honey, offering a mature, full taste.'},
+  'b-mango':{title:'Green Tea with Mango & Pure Greek Honey',desc:'Oriental recipe in green iced tea preserving natural catechins, combined with exotic mango fruit juice and 100% natural Greek honey.'},
+  'c-blue':{title:'Green Tea with Blueberry & Pure Greek Honey',desc:'Antioxidant-rich green tea infused with natural blueberry juice and pure Greek honey for a delightfully fruity Mediterranean taste.'},
+  'b-blue':{title:'Green Tea with Blueberry & Pure Greek Honey',desc:'Antioxidant-rich green tea infused with natural blueberry juice and pure Greek honey for a delightfully fruity Mediterranean taste.'},
+  'c-cannabis':{title:'Green Tea with Cannabis & Pure Greek Honey',desc:'YAMAS Cannabis Ice Tea combining premium green tea with natural cannabis (hemp extract) and pure Greek honey. Uniquely refreshing.'},
+  'b-cannabis':{title:'Green Tea with Cannabis & Pure Greek Honey',desc:'YAMAS Cannabis Ice Tea combining premium green tea with natural cannabis (hemp extract) and pure Greek honey. Uniquely refreshing.'},
+  'b-camomile':{title:'Herbal Camomile with Pure Honey & Thyme',desc:'YAMAS Chamomile infusion crafted with natural chamomile flowers, pure Greek honey, and a delicate touch of fresh Greek thyme.'},
+  'c-grape':{title:'White Tea with Pink Grapefruit & Pure Greek Honey',desc:'Rare white tea paired with crisp pink grapefruit juice and natural Greek honey — a refreshing bittersweet citrus spritz.'},
+  'b-grape':{title:'White Tea with Pink Grapefruit & Pure Greek Honey',desc:'Rare white tea paired with crisp pink grapefruit juice and natural Greek honey — a refreshing bittersweet citrus spritz.'},
+  'c-matcha':{title:'Green Tea with Matcha & Yuzu',desc:'Japanese-inspired green tea infused with vibrant ceremonial Matcha and citrusy Yuzu fruit, sweetened naturally with Greek honey.'}
+};
+
 function selectFlavour(range,id,src,name){
   const m=document.getElementById(range==='can'?'can-main':'bottle-main');
   const bt=document.getElementById(range+'-badge-text');
+  const dTitle=document.getElementById(range+'-desc-title');
+  const dText=document.getElementById(range+'-desc-text');
   m.classList.add('fade-out');
-  setTimeout(()=>{m.src=src;m.alt=name;if(bt)bt.textContent=name;m.classList.remove('fade-out');},160);
+  setTimeout(()=>{
+    m.src=src;m.alt=name;if(bt)bt.textContent=name;m.classList.remove('fade-out');
+  },160);
+  const info=drinkDescriptions[id];
+  if(info){
+    if(dTitle)dTitle.textContent=info.title;
+    if(dText)dText.textContent=info.desc;
+  }
   document.getElementById(range+'-gallery')?.querySelectorAll('.fp').forEach(p=>p.classList.toggle('active',p.dataset.id===id));
   document.getElementById(range+'-list')?.querySelectorAll('li').forEach(li=>li.classList.toggle('active',li.dataset.id===id));
 }
+
 function resetRange(range){
   const d=defaults[range];
   const m=document.getElementById(range==='can'?'can-main':'bottle-main');
   const bt=document.getElementById(range+'-badge-text');
+  const dTitle=document.getElementById(range+'-desc-title');
+  const dText=document.getElementById(range+'-desc-text');
   m.classList.add('fade-out');
-  setTimeout(()=>{m.src=d.img;m.alt='YAMAS '+d.name;if(bt)bt.textContent='Showing: '+d.name;m.classList.remove('fade-out');},160);
+  setTimeout(()=>{
+    m.src=d.img;m.alt='YAMAS '+d.name;if(bt)bt.textContent='Showing: '+d.name;m.classList.remove('fade-out');
+  },160);
+  if(dTitle)dTitle.textContent='YAMAS Hellenic Iced Tea Range';
+  if(dText)dText.textContent='Select any drink below to view its official Greek recipe description & ingredients.';
   document.getElementById(range+'-gallery')?.querySelectorAll('.fp').forEach(p=>p.classList.remove('active'));
   document.getElementById(range+'-list')?.querySelectorAll('li').forEach(li=>li.classList.remove('active'));
 }
